@@ -6,11 +6,12 @@
 /*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 23:51:36 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/10/19 00:47:59 by jmorneau         ###   ########.fr       */
+/*   Updated: 2022/10/21 13:59:19 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/cub3d.h"
+# include "../../inc/cub3d.h"
+
 
 // static int texture_init(t_mlx *game, const char **argv)
 // {

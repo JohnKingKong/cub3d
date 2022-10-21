@@ -6,11 +6,11 @@
 /*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 01:09:39 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/10/19 01:10:40 by jmorneau         ###   ########.fr       */
+/*   Updated: 2022/10/21 13:59:27 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/cub3d.h"
+# include "../../inc/cub3d.h"
 
 float normalize_angle(float angle)
 {

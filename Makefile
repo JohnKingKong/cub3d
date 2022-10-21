@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jvigneau <jvigneau@student.42.fr>          +#+  +:+       +#+         #
+#    By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/31 08:51:26 by aguay             #+#    #+#              #
-#    Updated: 2022/10/21 13:10:23 by jvigneau         ###   ########.fr        #
+#    Updated: 2022/10/21 13:58:24 by jmorneau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,42 +47,49 @@ CFLAGS			= -Wall -Wextra -Werror
 ## ----- PATH TO DIRECTORIES ----- ##
 SRCS_DIR		= src/
 
-PARSING_DIR		= src/parsing/
-
-RAYTRACING_DIR	= src/ray_tracing/
+KEY_INTERACTION_DIR	= src/key_interaction/
+MAIN_DIR			= src/main/
+OTHERS_DIR			= src/others/
+PARSING_DIR			= src/parsing/
+PLAYER_DIR			= src/player/
+RAYTRACING_DIR		= src/ray_tracing/
+RENDER_DIR			= src/render/
 
 OBJ_DIR			= obj/
 
 INCLUDE_DIR		= inc/
 
-MAIN_DIR		= $(SRCS_DIR)main
-
 ## ----- FILES ----- ##
-SRCS_FILES			=						\
-											\
 
-PARSING_FILES		=						\
-						parsing_1.c			\
-
-RAYTRACING_FILES	=						\
-
-HEADER_FILES	=							\
+KEY_INTERACTION_FILES	= key_hook.c 		\
+		
+MAIN_FILES				= cub3d.c game_init.c	
+OTHERS_FILES			= usefull.c usefull2.c		
+PARSING_FILES			= error.c map_reader.c							
+RAYTRACING_FILES		= ray_casting.c				
 
 ## ----- ADDPREFIX TO FILES ----- ##
 
-OBJS			=	$(addprefix $(OBJ_DIR), $(OBJ_FILES))
-PARSING_SRCS	=	$(addprefix $(PARSING_DIR), $(PARSING_FILES))
-RAYTRACING_SRCS	=	$(addprefix $(RAYTRACING_DIR), $(RAYTRACING_FILES))
-HEADER_SRCS		=	$(addprefix $(INCLUDE_DIR), $(HEADER_FILES))
+OBJS					=	$(addprefix $(OBJ_DIR), $(OBJ_FILES))
 
-OBJ_FILES		=	$(SRCS_FILES:.c=.o) $(PARSING_FILES:.c=.o) $(RAYTRACING_FILES:.c=.o)
 
-VPATH			=	$(SRCS_DIR) $(PARSING_DIR) $(RAYTRACING_DIR)
+KEY_INTERACTION_SRCS	=	$(addprefix $(KEY_INTERACTION_DIR), $(KEY_INTERACTION_FILES))
+MAIN_SRCS				=	$(addprefix $(MAIN_DIR), $(MAIN_FILES))
+OTHERS_SRC				= 	$(addprefix $(OTHERS_DIR), $(OTHERS_DIR))
+PARSING_SRCS			=	$(addprefix $(PARSING_DIR), $(PARSING_FILES))
+RAYTRACING_SRCS			=	$(addprefix $(RAYTRACING_DIR), $(RAYTRACING_FILES))
+RENDER_SRCS				= 	$(addprefix $(RENDER_DIR), $(RENDER_FILES))
+
+HEADER_SRCS				=	$(addprefix $(INCLUDE_DIR), $(HEADER_FILES))
+
+OBJ_FILES				=	$(KEY_INTERACTION_FILES:.c=.o) $(MAIN_FILES:.c=.o) $(OTHERS_FILES:.c=.o) $(PARSING_FILES:.c=.o) $(RAYTRACING_FILES:.c=.o) $(RENDER_FILES:.c=.o)  
+
+VPATH					=	$(KEY_INTERACTION_DIR) $(MAIN_DIR) $(OTHERS_DIR) $(PARSING_DIR) $(RAYTRACING_DIR) $(RENDER_DIR) 
 
 ## ----- .C TO .O CONVERT ----- ##
 
-$(OBJ_DIR)%.o: %.c $(HEADER_SRCS) $(PARSING_SRCS) $(RAYTRACING_SRCS)
-	$(CC) $(CFLAGS) -I $(INCLUDE_DIR) -c $< -o $@
+$(OBJ_DIR)%.o: %.c $(KEY_INTERACTION_SRCS) $(MAIN_SRCS) $(OTHERS_SRCS) $(PARSING_SRCS) $(RAYTRACING_SRCS) $(RENDER_SRCS) 
+	$(CC) $(CFLAGS) -I $(INCLUDE_DIR)  -c $< -o $@
 #	Here you can add any header foler by adding -I $(header_directory)
 
 

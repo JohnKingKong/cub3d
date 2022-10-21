@@ -6,11 +6,11 @@
 /*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 00:52:08 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/10/19 01:00:03 by jmorneau         ###   ########.fr       */
+/*   Updated: 2022/10/21 14:24:54 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/cub3d.h"
+# include "../../inc/cub3d.h"
 
 float convert_deg_rad(float deg)
 {
@@ -34,7 +34,7 @@ void draw_square(t_mlx *game, int x, int y, int color)
 		while (j < 64)
 		{
 			if ((i == 0 || j == 0 || i == 63 || j == 63))
-				my_mlx_pixel_put(&game->img, j++ + x, i + y, GRAY);
+				my_mlx_pixel_put(&game->img, j++ + x, i + y, GRANITE_GREY);
 			else
 				my_mlx_pixel_put(&game->img, j++ + x, i + y, color);
 		}
@@ -54,9 +54,9 @@ void draw_grid(t_mlx *game)
 		while (j < game->map.len)
 		{
 			if (game->map.map[i][j] == '1')
-				draw_square(game, j * 64, i * 64, BLACK);
+				draw_square(game, j * 64, i * 64, BLACK_BLUE);
 			else
-				draw_square(game, j * 64, i * 64, WHITE);
+				draw_square(game, j * 64, i * 64, WHITE_ALUMINUM);
 			j++;
 		}
 		i++;

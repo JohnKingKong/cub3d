@@ -6,7 +6,7 @@
 /*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 23:32:47 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/10/19 01:49:17 by jmorneau         ###   ########.fr       */
+/*   Updated: 2022/10/21 13:58:58 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ typedef struct	s_v
 
 typedef struct	s_ray
 {
-	t_vector	side_delta;
+	t_v			side_delta;
 	float		dist;
 	int			hit_down;
 	int			hit_left;

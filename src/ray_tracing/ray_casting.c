@@ -6,11 +6,11 @@
 /*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 01:05:51 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/10/19 01:56:30 by jmorneau         ###   ########.fr       */
+/*   Updated: 2022/10/21 14:27:11 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/cub3d.h"
+# include "../../inc/cub3d.h"
 
 static t_v ray_dir_init(float angle)
 {
@@ -28,6 +28,9 @@ static t_v ray_dir_init(float angle)
 t_ray dda_v2(t_mlx *game, float angle)
 {
 	t_dda dda;
+	t_ray ok;
+
+	ok.dist = 2;
 	ft_memset(&dda, 0, sizeof(dda));
 	angle = normalize_angle(angle); // a pt remove 
 	
@@ -38,11 +41,13 @@ t_ray dda_v2(t_mlx *game, float angle)
 	if (dda.ray_dir.x < 0)
 	{
 		dda.step.x = -1;
-		dda.ray_lenght = 
+		// dda.ray_lenght = 
 		
 	}
 
+	(void)game;
 
 
+	return (ok);
 	
 }

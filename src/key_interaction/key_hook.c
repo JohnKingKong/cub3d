@@ -6,11 +6,11 @@
 /*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 00:43:10 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/10/19 00:47:32 by jmorneau         ###   ########.fr       */
+/*   Updated: 2022/10/21 13:56:06 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/cub3d.h"
+# include "../../inc/cub3d.h"
 
 int	move(int keycode, t_mlx *game)
 {	

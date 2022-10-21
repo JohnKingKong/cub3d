@@ -6,15 +6,16 @@
 /*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 23:33:21 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/10/19 01:11:24 by jmorneau         ###   ########.fr       */
+/*   Updated: 2022/10/21 14:30:58 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CUB3D_H
 # define CUB3D_H
 
-# include "color.h"
+# include "colors.h"
 # include "libft.h"
+# include "./minilibx-linux/mlx.h"
 # include "d_cub3d.h"
 # include "p_cub3d.h"
 # include "s_cub3d.h"

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   colors.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jvigneau <jvigneau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 12:02:43 by jvigneau          #+#    #+#             */
-/*   Updated: 2022/10/21 12:03:24 by jvigneau         ###   ########.fr       */
+/*   Updated: 2022/10/21 14:32:03 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -153,5 +153,7 @@
 # define NEON_PUR 0xfe00f6
 # define NEON_LT_PUR 0xf000ff
 # define NEON_BLACK 0x000000
+
+# define INV 0xFF00FF
 
 #endif

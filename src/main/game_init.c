@@ -6,11 +6,11 @@
 /*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 00:29:39 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/10/19 01:10:49 by jmorneau         ###   ########.fr       */
+/*   Updated: 2022/10/21 13:59:22 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/cub3d.h"
+# include "../../inc/cub3d.h"
 
 void game_init(t_mlx *game)
 {
