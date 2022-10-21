@@ -6,7 +6,7 @@
 /*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 00:52:08 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/10/21 14:24:54 by jmorneau         ###   ########.fr       */
+/*   Updated: 2022/10/21 14:41:54 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void draw_grid(t_mlx *game)
 			if (game->map.map[i][j] == '1')
 				draw_square(game, j * 64, i * 64, BLACK_BLUE);
 			else
-				draw_square(game, j * 64, i * 64, WHITE_ALUMINUM);
+				draw_square(game, j * 64, i * 64, WHITE);
 			j++;
 		}
 		i++;
