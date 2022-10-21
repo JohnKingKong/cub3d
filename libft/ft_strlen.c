@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.h                                            :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/18 23:33:21 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/10/19 01:11:24 by jmorneau         ###   ########.fr       */
+/*   Created: 2022/04/02 16:54:00 by jmorneau          #+#    #+#             */
+/*   Updated: 2022/10/03 14:07:25 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_H
-# define CUB3D_H
+int	ft_strlen(char *str)
+{
+	int	i;
 
-# include "color.h"
-# include "libft.h"
-# include "d_cub3d.h"
-# include "p_cub3d.h"
-# include "s_cub3d.h"
-# include "math.h"
-# include "mlx.h"
-
-// a remove 
-#include <stdio.h>
-
-#endif
+	i = 0;
+	if (!str)
+		return (0);
+	while (str[i] && str[i] != '\n')
+		i++;
+	return (i);
+}

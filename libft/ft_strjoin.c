@@ -1,27 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.h                                            :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/18 23:33:21 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/10/19 01:11:24 by jmorneau         ###   ########.fr       */
+/*   Created: 2022/04/02 18:21:41 by jmorneau          #+#    #+#             */
+/*   Updated: 2022/04/02 18:24:34 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_H
-# define CUB3D_H
+#include "libft.h"
 
-# include "color.h"
-# include "libft.h"
-# include "d_cub3d.h"
-# include "p_cub3d.h"
-# include "s_cub3d.h"
-# include "math.h"
-# include "mlx.h"
+char	*ft_strjoin(char const *s1, char const *s2)
+{
+	int		i;
+	int		j;
+	char	*str;
 
-// a remove 
-#include <stdio.h>
-
-#endif
+	i = 0;
+	j = 0;
+	str = malloc(sizeof(char) * (ft_strlen((char *)s1)
+				+ ft_strlen((char *)s2)) + 1);
+	if (!str)
+		return (NULL);
+	while (s1[i] != '\0')
+	{
+		str[i] = s1[i];
+		i++;
+	}
+	while (s2[j] != '\0')
+	{
+		str[i] = s2[j];
+		i++;
+		j++;
+	}
+	str[i] = '\0';
+	return (str);
+}

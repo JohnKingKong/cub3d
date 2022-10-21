@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.h                                            :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/18 23:33:21 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/10/19 01:11:24 by jmorneau         ###   ########.fr       */
+/*   Created: 2022/04/02 17:14:29 by jmorneau          #+#    #+#             */
+/*   Updated: 2022/04/02 17:15:28 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_H
-# define CUB3D_H
+#include "libft.h"
 
-# include "color.h"
-# include "libft.h"
-# include "d_cub3d.h"
-# include "p_cub3d.h"
-# include "s_cub3d.h"
-# include "math.h"
-# include "mlx.h"
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+{
+	char			*cs;
+	unsigned int	i;
+	int				len;
 
-// a remove 
-#include <stdio.h>
-
-#endif
+	if (s == NULL)
+		return (NULL);
+	i = 0;
+	len = ft_strlen((char *)s);
+	cs = malloc(sizeof(char) * len + 1);
+	if (cs == NULL)
+		return (NULL);
+	while (s[i] != '\0')
+	{
+		cs[i] = f(i, s[i]);
+		i++;
+	}
+	cs[i] = '\0';
+	return (cs);
+}

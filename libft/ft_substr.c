@@ -1,27 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.h                                            :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/18 23:33:21 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/10/19 01:11:24 by jmorneau         ###   ########.fr       */
+/*   Created: 2022/04/02 17:44:03 by jmorneau          #+#    #+#             */
+/*   Updated: 2022/04/02 18:16:08 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_H
-# define CUB3D_H
+#include "libft.h"
 
-# include "color.h"
-# include "libft.h"
-# include "d_cub3d.h"
-# include "p_cub3d.h"
-# include "s_cub3d.h"
-# include "math.h"
-# include "mlx.h"
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	size_t	i;
+	size_t	j;
+	char	*str;
 
-// a remove 
-#include <stdio.h>
-
-#endif
+	str = (char *)malloc(sizeof(*s) * (len + 1));
+	if (!str)
+		return (NULL);
+	i = 0;
+	j = 0;
+	while (*(s + i))
+	{
+		if (i >= start && j < len)
+		{
+			str[j] = s[i];
+			j++;
+		}
+		i++;
+	}
+	str[j] = 0;
+	return (str);
+}

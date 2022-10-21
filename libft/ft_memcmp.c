@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.h                                            :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/18 23:33:21 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/10/19 01:11:24 by jmorneau         ###   ########.fr       */
+/*   Created: 2022/04/12 14:45:56 by jmorneau          #+#    #+#             */
+/*   Updated: 2022/04/12 15:05:01 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_H
-# define CUB3D_H
-
-# include "color.h"
-# include "libft.h"
-# include "d_cub3d.h"
-# include "p_cub3d.h"
-# include "s_cub3d.h"
-# include "math.h"
-# include "mlx.h"
-
-// a remove 
+#include "libft.h"
 #include <stdio.h>
 
-#endif
+int	ft_memcmp(const void *str1, const void *str2, size_t n)
+{
+	size_t			i;
+	unsigned char	*sc1;
+	unsigned char	*sc2;
+
+	i = 0;
+	sc1 = (unsigned char *)str1;
+	sc2 = (unsigned char *)str2;
+	while (n > i)
+	{
+		if (sc1[i] != sc2[i])
+			return (sc1[i] - sc2[i]);
+		i++;
+	}
+	return (0);
+}

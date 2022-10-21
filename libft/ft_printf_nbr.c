@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.h                                            :+:      :+:    :+:   */
+/*   ft_printf_nbr.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/18 23:33:21 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/10/19 01:11:24 by jmorneau         ###   ########.fr       */
+/*   Created: 2022/04/14 17:23:53 by jmorneau          #+#    #+#             */
+/*   Updated: 2022/05/08 19:02:26 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_H
-# define CUB3D_H
+#include "libft.h"
 
-# include "color.h"
-# include "libft.h"
-# include "d_cub3d.h"
-# include "p_cub3d.h"
-# include "s_cub3d.h"
-# include "math.h"
-# include "mlx.h"
+int	lennbr(int n)
+{
+	int	count;
 
-// a remove 
-#include <stdio.h>
+	count = 0;
+	if (n == 0)
+		return (1);
+	if (n < 0)
+		count++;
+	while (n != 0)
+	{
+		n /= 10;
+		count++;
+	}
+	return (count);
+}
 
-#endif
+int	ft_printf_nbr(int n)
+{
+	ft_putnbr_fd(n, 1);
+	return (lennbr(n));
+}

@@ -1,27 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.h                                            :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/18 23:33:21 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/10/19 01:11:24 by jmorneau         ###   ########.fr       */
+/*   Created: 2022/04/01 15:03:42 by jmorneau          #+#    #+#             */
+/*   Updated: 2022/04/14 15:17:40 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_H
-# define CUB3D_H
+#include "libft.h"
 
-# include "color.h"
-# include "libft.h"
-# include "d_cub3d.h"
-# include "p_cub3d.h"
-# include "s_cub3d.h"
-# include "math.h"
-# include "mlx.h"
+int	ft_atoi(const char *str)
+{
+	int	i;
+	int	signe;
+	int	res;
 
-// a remove 
-#include <stdio.h>
-
-#endif
+	res = 0;
+	signe = 1;
+	i = 0;
+	while ((str[i] > 8 && 14 > str[i]) || str[i] == 32)
+		i++;
+	if (str[i] == '+' || str[i] == '-')
+	{
+		if (str[i] == '-')
+			signe *= -1;
+		i++;
+	}
+	while (str[i] > 47 && 58 > str[i])
+	{
+		res = res * 10 + str[i] - 48;
+		i++;
+	}
+	return (res * signe);
+}

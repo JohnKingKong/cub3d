@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.h                                            :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/18 23:33:21 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/10/19 01:11:24 by jmorneau         ###   ########.fr       */
+/*   Created: 2022/04/01 18:45:35 by jmorneau          #+#    #+#             */
+/*   Updated: 2022/04/15 18:36:45 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_H
-# define CUB3D_H
+#include "libft.h"
 
-# include "color.h"
-# include "libft.h"
-# include "d_cub3d.h"
-# include "p_cub3d.h"
-# include "s_cub3d.h"
-# include "math.h"
-# include "mlx.h"
+void	*ft_memcpy(void *dest, const void *src, size_t n)
+{
+	char		*dest_cpy;
+	const char	*src_cpy;
 
-// a remove 
-#include <stdio.h>
-
-#endif
+	if (!dest && !src)
+		return (0);
+	dest_cpy = dest;
+	src_cpy = src;
+	while (n-- > 0)
+		*dest_cpy++ = *src_cpy++;
+	return (dest);
+}
