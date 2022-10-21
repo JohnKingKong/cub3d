@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.h                                            :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/18 23:33:21 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/10/19 01:11:24 by jmorneau         ###   ########.fr       */
+/*   Created: 2022/04/12 14:38:57 by jmorneau          #+#    #+#             */
+/*   Updated: 2022/04/14 15:17:27 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_H
-# define CUB3D_H
+#include "libft.h"
 
-# include "color.h"
-# include "libft.h"
-# include "d_cub3d.h"
-# include "p_cub3d.h"
-# include "s_cub3d.h"
-# include "math.h"
-# include "mlx.h"
+void	*ft_memchr(const void *str, int c, size_t n)
+{
+	unsigned int	i;
 
-// a remove 
-#include <stdio.h>
-
-#endif
+	i = 0;
+	while (i < n)
+	{
+		if (((unsigned const char *)str)[i] == (unsigned char)c)
+			return ((void *)&((unsigned const char *)str)[i]);
+		i++;
+	}
+	return (NULL);
+}

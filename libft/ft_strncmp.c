@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.h                                            :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/18 23:33:21 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/10/19 01:11:24 by jmorneau         ###   ########.fr       */
+/*   Created: 2022/04/02 17:08:17 by jmorneau          #+#    #+#             */
+/*   Updated: 2022/04/02 17:12:06 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_H
-# define CUB3D_H
+#include "libft.h"
 
-# include "color.h"
-# include "libft.h"
-# include "d_cub3d.h"
-# include "p_cub3d.h"
-# include "s_cub3d.h"
-# include "math.h"
-# include "mlx.h"
-
-// a remove 
-#include <stdio.h>
-
-#endif
+int	ft_strncmp(const char *str1, const char *str2, size_t n)
+{
+	while (*str1 != '\0' && *str1 == *str2 && n-- > 0)
+	{
+		str1++;
+		str2++;
+	}
+	if (n == 0)
+		return (0);
+	return ((unsigned char)*str1 - (unsigned char)*str2);
+}

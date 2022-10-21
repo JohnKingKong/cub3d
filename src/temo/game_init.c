@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.h                                            :+:      :+:    :+:   */
+/*   game_init.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/18 23:33:21 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/10/19 01:11:24 by jmorneau         ###   ########.fr       */
+/*   Created: 2022/10/19 00:29:39 by jmorneau          #+#    #+#             */
+/*   Updated: 2022/10/19 01:10:49 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_H
-# define CUB3D_H
+#include "../include/cub3d.h"
 
-# include "color.h"
-# include "libft.h"
-# include "d_cub3d.h"
-# include "p_cub3d.h"
-# include "s_cub3d.h"
-# include "math.h"
-# include "mlx.h"
+void game_init(t_mlx *game)
+{
 
-// a remove 
-#include <stdio.h>
-
-#endif
+	draw_grid(game); // a enlever 
+	mlx_hook(game->basic.win, 2, 0, move, game);
+	mlx_hook(game->basic.win, 17, 0, (void *)exit, 0);
+	mlx_loop(game->basic.mlx);	
+}

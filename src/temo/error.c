@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.h                                            :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/18 23:33:21 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/10/19 01:11:24 by jmorneau         ###   ########.fr       */
+/*   Created: 2022/10/18 23:56:15 by jmorneau          #+#    #+#             */
+/*   Updated: 2022/10/19 00:50:21 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_H
-# define CUB3D_H
+#include "../include/cub3d.h"
 
-# include "color.h"
-# include "libft.h"
-# include "d_cub3d.h"
-# include "p_cub3d.h"
-# include "s_cub3d.h"
-# include "math.h"
-# include "mlx.h"
+int print_error(char *str)
+{
+	if (str)
+	{
+		ft_putendl_fd("Error", 2);
+		ft_putendl_fd(str, 2);
+	}
+	return (0);
+}
 
-// a remove 
-#include <stdio.h>
-
-#endif
+void	ft_exit(t_mlx *game)
+{
+	mlx_destroy_image(game->basic.mlx, game->img.img);
+	ft_free_chartable(game->map.map);
+	mlx_hook(game->basic.win, 17, 0, (void *)exit, 0);
+	exit (0);
+}
