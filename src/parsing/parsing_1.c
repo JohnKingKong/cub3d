@@ -6,13 +6,9 @@
 /*   By: jvigneau <jvigneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 12:33:17 by jvigneau          #+#    #+#             */
-/*   Updated: 2022/10/21 12:49:08 by jvigneau         ###   ########.fr       */
+/*   Updated: 2022/10/21 14:26:52 by jvigneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
-int main(void)
-{
-	printf("%s\n", "lollllll");
-	return 0;
-}
+#include "../inc/cub3d.h"
+

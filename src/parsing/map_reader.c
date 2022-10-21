@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   map_reader.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jvigneau <jvigneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 00:21:26 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/10/19 00:31:56 by jmorneau         ###   ########.fr       */
+/*   Updated: 2022/10/21 14:15:29 by jvigneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/cub3d.h"
+#include "../inc/cub3d.h"
 
 static char	*check_newline(int fd)
 {
