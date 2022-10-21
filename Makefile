@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: aguay <aguay@student.42.fr>                +#+  +:+       +#+         #
+#    By: jvigneau <jvigneau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/31 08:51:26 by aguay             #+#    #+#              #
-#    Updated: 2022/09/23 08:59:00 by aguay            ###   ########.fr        #
+#    Updated: 2022/10/21 11:59:17 by jvigneau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -160,7 +160,7 @@ leak: obj $(NAME)
 	@valgrind ./minishell
 
 setup: 
-	@rm -rf LICENSE images README.md .git
+	@rm -rf LICENSE images README.md
 
 ## ----- CLEAN COMMANDS ----- ##
 
