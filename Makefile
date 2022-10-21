@@ -6,7 +6,7 @@
 #    By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/31 08:51:26 by aguay             #+#    #+#              #
-#    Updated: 2022/10/21 13:58:24 by jmorneau         ###   ########.fr        #
+#    Updated: 2022/10/21 15:09:53 by jmorneau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,9 +22,15 @@
 NAME 			= Cub3d
 
 ## ----- COMPILER AND FLAGS ----- ##
-CC				= clang
+CC				= clang 
 
 CFLAGS			= -Wall -Wextra -Werror
+
+MINIFLAGS		= -lmlx -framework OpenGL -framework AppKit
+
+LIBFT			= ./libft/libft.a
+
+LIBFT_DIR		= cd ./libft && make 
 
 ## ----- ADD FILES TUTORIAL ----- ##
 
@@ -66,12 +72,12 @@ KEY_INTERACTION_FILES	= key_hook.c 		\
 MAIN_FILES				= cub3d.c game_init.c	
 OTHERS_FILES			= usefull.c usefull2.c		
 PARSING_FILES			= error.c map_reader.c							
-RAYTRACING_FILES		= ray_casting.c				
+RAYTRACING_FILES		= ray_casting.c	
+HEADER_FILES			= libft.h
 
 ## ----- ADDPREFIX TO FILES ----- ##
 
 OBJS					=	$(addprefix $(OBJ_DIR), $(OBJ_FILES))
-
 
 KEY_INTERACTION_SRCS	=	$(addprefix $(KEY_INTERACTION_DIR), $(KEY_INTERACTION_FILES))
 MAIN_SRCS				=	$(addprefix $(MAIN_DIR), $(MAIN_FILES))
@@ -88,8 +94,8 @@ VPATH					=	$(KEY_INTERACTION_DIR) $(MAIN_DIR) $(OTHERS_DIR) $(PARSING_DIR) $(RA
 
 ## ----- .C TO .O CONVERT ----- ##
 
-$(OBJ_DIR)%.o: %.c $(KEY_INTERACTION_SRCS) $(MAIN_SRCS) $(OTHERS_SRCS) $(PARSING_SRCS) $(RAYTRACING_SRCS) $(RENDER_SRCS) 
-	$(CC) $(CFLAGS) -I $(INCLUDE_DIR)  -c $< -o $@
+$(OBJ_DIR)%.o: %.c $(KEY_INTERACTION_SRCS) $(MAIN_SRCS) $(OTHERS_SRCS) $(PARSING_SRCS) $(RAYTRACING_SRCS) $(RENDER_SRCS)
+	$(CC) $(CFLAGS) -I $(INCLUDE_DIR) -c $< -o $@
 #	Here you can add any header foler by adding -I $(header_directory)
 
 
@@ -151,8 +157,9 @@ all: obj $(NAME)
 #		to compile anything necessary
 #	3) Call the compiler with his dependencies
 #		(.o files, library.a) with -o (output) name
-$(NAME): $(OBJ_DIR) $(OBJS)
-	$(CC) $(OBJS) -o $(NAME)
+$(NAME): $(OBJ_DIR) $(OBJS) $(LIBFT)
+	$(LIBFT_DIR)
+	$(CC) $(OBJS) $(LIBFT) $(MINIFLAGS) -o $(NAME)
 
 
 #	Create .o folder for easy clean
@@ -185,10 +192,12 @@ setup:
 #	@make -C $(LIBFT_DIR) clean
 #		(libft exemple)
 
-clean:
+clean: 
+	$(LIBFT_DIR) $@
 	$(RM) $(OBJ_DIR)
 
 fclean: clean
+	$(LIBFT_DIR) $@
 	@rm -rf $(NAME)
 	@rm -rf *.dSYM
 #	Here don't forget to delete .a previously

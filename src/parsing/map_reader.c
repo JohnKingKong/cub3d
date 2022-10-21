@@ -6,11 +6,11 @@
 /*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 00:21:26 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/10/21 14:39:29 by jmorneau         ###   ########.fr       */
+/*   Updated: 2022/10/21 14:59:04 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/cub3d.h"
+#include "../../inc/cub3d.h"
 
 static char	*check_newline(int fd)
 {

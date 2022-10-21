@@ -6,11 +6,11 @@
 /*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 23:56:15 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/10/21 14:38:06 by jmorneau         ###   ########.fr       */
+/*   Updated: 2022/10/21 14:58:53 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/cub3d.h"
+#include "../../inc/cub3d.h"
 
 int	print_error(char *str)
 {

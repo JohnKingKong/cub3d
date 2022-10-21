@@ -6,7 +6,7 @@
 /*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 00:52:08 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/10/21 14:41:54 by jmorneau         ###   ########.fr       */
+/*   Updated: 2022/10/21 14:43:51 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void draw_square(t_mlx *game, int x, int y, int color)
 		while (j < 64)
 		{
 			if ((i == 0 || j == 0 || i == 63 || j == 63))
-				my_mlx_pixel_put(&game->img, j++ + x, i + y, GRANITE_GREY);
+				my_mlx_pixel_put(&game->img, j++ + x, i + y, GRAY);
 			else
 				my_mlx_pixel_put(&game->img, j++ + x, i + y, color);
 		}
@@ -54,7 +54,7 @@ void draw_grid(t_mlx *game)
 		while (j < game->map.len)
 		{
 			if (game->map.map[i][j] == '1')
-				draw_square(game, j * 64, i * 64, BLACK_BLUE);
+				draw_square(game, j * 64, i * 64, BLACK);
 			else
 				draw_square(game, j * 64, i * 64, WHITE);
 			j++;

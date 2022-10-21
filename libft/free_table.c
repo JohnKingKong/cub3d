@@ -6,11 +6,11 @@
 /*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 13:29:07 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/10/01 20:09:31 by jmorneau         ###   ########.fr       */
+/*   Updated: 2022/10/21 15:02:14 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
+#include "./libft.h"
 
 void	ft_free_chartable(char **table)
 {
