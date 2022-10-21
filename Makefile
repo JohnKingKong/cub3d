@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+         #
+#    By: jvigneau <jvigneau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/31 08:51:26 by aguay             #+#    #+#              #
-#    Updated: 2022/10/21 15:09:53 by jmorneau         ###   ########.fr        #
+#    Updated: 2022/10/21 15:15:52 by jvigneau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -157,7 +157,7 @@ all: obj $(NAME)
 #		to compile anything necessary
 #	3) Call the compiler with his dependencies
 #		(.o files, library.a) with -o (output) name
-$(NAME): $(OBJ_DIR) $(OBJS) $(LIBFT)
+$(NAME): $(OBJ_DIR) $(OBJS)
 	$(LIBFT_DIR)
 	$(CC) $(OBJS) $(LIBFT) $(MINIFLAGS) -o $(NAME)
 
