@@ -6,7 +6,7 @@
 #    By: jvigneau <jvigneau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/31 08:51:26 by aguay             #+#    #+#              #
-#    Updated: 2022/10/21 11:59:17 by jvigneau         ###   ########.fr        #
+#    Updated: 2022/10/21 13:10:23 by jvigneau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@
 #	42 Quebec.
 
 ## -----  NAME OF THE PROGRAMM ----- ##
-NAME 			= HelloWorld
+NAME 			= Cub3d
 
 ## ----- COMPILER AND FLAGS ----- ##
 CC				= clang
@@ -45,35 +45,43 @@ CFLAGS			= -Wall -Wextra -Werror
 #	VPATH = $(X_DIR)
 
 ## ----- PATH TO DIRECTORIES ----- ##
-SRCS_DIR		= srcs/
+SRCS_DIR		= src/
+
+PARSING_DIR		= src/parsing/
+
+RAYTRACING_DIR	= src/ray_tracing/
 
 OBJ_DIR			= obj/
 
-INCLUDE_DIR		= includes/
+INCLUDE_DIR		= inc/
 
 MAIN_DIR		= $(SRCS_DIR)main
 
 ## ----- FILES ----- ##
-SRCS_FILES		=						\
+SRCS_FILES			=						\
+											\
 
-MAIN_FILES		=						\
-					main.c				\
+PARSING_FILES		=						\
+						parsing_1.c			\
 
-HEADER_FILES	=						\
+RAYTRACING_FILES	=						\
+
+HEADER_FILES	=							\
 
 ## ----- ADDPREFIX TO FILES ----- ##
 
 OBJS			=	$(addprefix $(OBJ_DIR), $(OBJ_FILES))
-MAIN_SRCS		=	$(addprefix $(MAIN_DIR), $(MAIN_FILES))
+PARSING_SRCS	=	$(addprefix $(PARSING_DIR), $(PARSING_FILES))
+RAYTRACING_SRCS	=	$(addprefix $(RAYTRACING_DIR), $(RAYTRACING_FILES))
 HEADER_SRCS		=	$(addprefix $(INCLUDE_DIR), $(HEADER_FILES))
 
-OBJ_FILES		=	$(SRCS_FILES:.c=.o) $(MAIN_FILES:.c=.o)
+OBJ_FILES		=	$(SRCS_FILES:.c=.o) $(PARSING_FILES:.c=.o) $(RAYTRACING_FILES:.c=.o)
 
-VPATH			=	$(SRCS_DIR) $(MAIN_DIR)
+VPATH			=	$(SRCS_DIR) $(PARSING_DIR) $(RAYTRACING_DIR)
 
 ## ----- .C TO .O CONVERT ----- ##
 
-$(OBJ_DIR)%.o: %.c $(HEADER_SRCS)
+$(OBJ_DIR)%.o: %.c $(HEADER_SRCS) $(PARSING_SRCS) $(RAYTRACING_SRCS)
 	$(CC) $(CFLAGS) -I $(INCLUDE_DIR) -c $< -o $@
 #	Here you can add any header foler by adding -I $(header_directory)
 
@@ -99,7 +107,7 @@ $(OBJ_DIR)%.o: %.c $(HEADER_SRCS)
 #				declaration in Makefile
 
 ## ----- TOOLS AND COLORS ----- ##
-RM				= rm -rf
+RM				= @rm -rf
 NO_PRINT		= --no-print-directory
 RED 			= \033[31m
 GREEN 			= \033[32m
@@ -157,7 +165,7 @@ opti: CFLAGS += -O3
 opti: obj $(NAME)
 
 leak: obj $(NAME)
-	@valgrind ./minishell
+	@valgrind ./$(NAME)
 
 setup: 
 	@rm -rf LICENSE images README.md
@@ -175,6 +183,7 @@ clean:
 
 fclean: clean
 	@rm -rf $(NAME)
+	@rm -rf *.dSYM
 #	Here don't forget to delete .a previously
 #	compiled in other dir/Makefile like libft
 #
