@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+         #
+#    By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/31 15:53:17 by jmorneau          #+#    #+#              #
-#    Updated: 2022/09/27 21:35:35 by jmorneau         ###   ########.fr        #
+#    Updated: 2022/10/25 14:19:30 by anonymous        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ SRCS			= ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.
 				ft_tolower.c ft_memset.c ft_calloc.c ft_strlen.c ft_strncmp.c ft_strmapi.c ft_strlen.c ft_substr.c ft_strdup.c ft_striteri.c \
 				ft_strjoin.c ft_strlcat.c ft_strlcpy.c ft_strchr.c ft_split.c ft_putchar_fd.c ft_putstr_fd.c ft_putnbr_fd.c ft_putendl_fd.c \
 				ft_memmove.c ft_memchr.c ft_memcmp.c ft_strnstr.c ft_strtrim.c ft_split.c ft_strrchr.c \
-				get_next_line.c get_next_line_utils.c \
+				get_next_line.c get_next_line_utils.c ft_isspace.c\
 				ft_printf_hex.c ft_printf_nbr.c ft_printf_ptr.c ft_printf_string.c ft_printf_unsigned.c ft_printf.c \
 				free_table.c \
 				

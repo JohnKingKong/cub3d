@@ -1,0 +1,29 @@
+map doit etre .cub done	
+
+
+
+
+px avoir plusieurs lignes vides entre la description des elements (mais pas ds la map) done
+ 
+
+
+un ou deux char pour decrire lelement, suvi des infos, (NO, paths vers la text; F R,G,B) done
+
+
+
+la desc des elements peut etre separes de plusieurs espaces (mais pas la map) done
+
+
+
+
+Map tjrs en dernier, le reste px etre random
+
+doit etre compose de 0, 1, et N,S,W ou E pour le position de depart du perso
+
+fermer par des murs (devrait se checker tu seul par le floodfill)
+
+px avoir des espaces dans la map (floodfill)
+
+
+
+fleches doivent bouger la cam et wasd doivent deplacer le perso

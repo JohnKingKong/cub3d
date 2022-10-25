@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   p_cub3d.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 23:32:45 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/10/19 01:11:52 by jmorneau         ###   ########.fr       */
+/*   Updated: 2022/10/25 13:42:51 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef P_CUB3D_H
 # define P_CUB3D_H
 
-#include "s_cub3d.h"
+# include "s_cub3d.h"
 
 int		print_error(char *str);
 int		map_reader(char *file, t_mlx *game);
@@ -27,8 +27,13 @@ void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
 float	normalize_angle(float angle);
 int		get_pixel(t_data *data, int x, int y);
 
+//Parsing Functions
+bool		start_parse(char *argv[], int argc);
+void		check_elements(char *file);
+t_map_infos	*get_infos(void);
 
-
+//Error Functions
+void	error_exit(char *error_message);
 
 
 #endif

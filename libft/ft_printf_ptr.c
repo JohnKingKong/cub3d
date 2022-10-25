@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_ptr.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/14 17:44:06 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/05/08 19:02:28 by jmorneau         ###   ########.fr       */
+/*   Updated: 2022/10/25 12:06:53 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_ptr_len(uintptr_t num)
+int	ft_ptr_len(unsigned long num)
 {
 	int	len;
 
@@ -25,7 +25,7 @@ int	ft_ptr_len(uintptr_t num)
 	return (len);
 }
 
-void	ft_put_ptr(uintptr_t num)
+void	ft_put_ptr(unsigned long num)
 {
 	if (num >= 16)
 	{
