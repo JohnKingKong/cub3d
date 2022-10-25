@@ -6,7 +6,7 @@
 /*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 23:56:15 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/10/25 13:04:05 by anonymous        ###   ########.fr       */
+/*   Updated: 2022/10/25 18:05:29 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,12 @@ void	error_exit(char *error_message)
 		ft_printf("%sError\nThe name of the map cant be empty\n%s", RED, GRN);
 	else if(ft_strnstr(error_message, "fake_file", len))
 		ft_printf("%sError\nThe map does not exist\n%s", RED, GRN);
+	else if (ft_strnstr(error_message, "duplicate", len))
+	{
+		ft_printf("%sError\nThere is multiple definitions of the same ", RED);
+		ft_printf("texture in the map file\n%s",GRN);
+	}
+	else if (ft_strnstr(error_message, "order_map", len))
+		ft_printf("%sError\nThe order of the map file is incorrect\n%s",RED, GRN);
 	exit (1);
 }

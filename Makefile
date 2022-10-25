@@ -6,7 +6,7 @@
 #    By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/31 08:51:26 by aguay             #+#    #+#              #
-#    Updated: 2022/10/25 13:10:12 by anonymous        ###   ########.fr        #
+#    Updated: 2022/10/25 17:31:24 by anonymous        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,13 +67,14 @@ INCLUDE_DIR		= inc/
 
 ## ----- FILES ----- ##
 
-KEY_INTERACTION_FILES	= key_hook.c 		\
+KEY_INTERACTION_FILES	= key_hook.c\
 		
-MAIN_FILES				= cub3d.c game_init.c	
-OTHERS_FILES			= usefull.c usefull2.c		
-PARSING_FILES			= error.c map_reader.c parsing_1.c parsing_2.c
-RAYTRACING_FILES		= ray_casting.c	
-HEADER_FILES			= libft.h
+MAIN_FILES				=	cub3d.c game_init.c
+OTHERS_FILES			=	usefull.c usefull2.c
+PARSING_FILES			=	error.c map_reader.c parsing_1.c parsing_elements.c\
+							parsing_map.c
+RAYTRACING_FILES		=	ray_casting.c
+HEADER_FILES			=	libft.h
 
 ## ----- ADDPREFIX TO FILES ----- ##
 
