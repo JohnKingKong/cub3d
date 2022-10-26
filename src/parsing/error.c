@@ -6,7 +6,7 @@
 /*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 23:56:15 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/10/25 18:05:29 by anonymous        ###   ########.fr       */
+/*   Updated: 2022/10/26 15:43:03 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,7 @@ void	error_exit(char *error_message)
 	}
 	else if (ft_strnstr(error_message, "order_map", len))
 		ft_printf("%sError\nThe order of the map file is incorrect\n%s",RED, GRN);
+	else if (ft_strnstr(error_message, "invalid_map", len))
+		ft_printf("%sError\nThe map is invalid\n%s",RED, GRN);
 	exit (1);
 }

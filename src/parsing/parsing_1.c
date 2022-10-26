@@ -6,7 +6,7 @@
 /*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 12:33:17 by jvigneau          #+#    #+#             */
-/*   Updated: 2022/10/25 13:07:15 by anonymous        ###   ########.fr       */
+/*   Updated: 2022/10/26 13:07:16 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,13 @@ static bool	check_dot_cub(char *filename)
 
 static bool	check_file_exists(char *filename)
 {
-	int	fd;
+	t_map_infos	*infos;
 
-	fd = open(filename, O_RDONLY);
-	if (fd < 0)
+	infos = get_infos();
+	infos->fd = open(filename, O_RDONLY);
+	if (infos->fd < 0)
 		return (false);
-	close(fd);
+	close(infos->fd);
 	return (true);
 }
 

@@ -6,7 +6,7 @@
 /*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 23:32:47 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/10/25 14:42:53 by anonymous        ###   ########.fr       */
+/*   Updated: 2022/10/26 13:06:21 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,8 +85,10 @@ typedef struct s_basic
 
 typedef struct s_map_infos
 {
+	int		fd;
 	bool	one_time_on[6];
 	char	*path[4];
+	char	**map;
 	char	***color;
 }	t_map_infos;
 
