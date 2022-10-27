@@ -6,7 +6,7 @@
 /*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 23:56:15 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/10/26 16:41:11 by anonymous        ###   ########.fr       */
+/*   Updated: 2022/10/27 13:08:10 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,15 @@ void	error_exit(char *error_message)
 	}
 	else if (ft_strnstr(error_message, "order_map", len))
 		ft_printf("%sError\nThe order of the map file is incorrect\n%s",RED, GRN);
+	else if (ft_strnstr(error_message, "invalid_input", len))
+		ft_printf("%sError\nSome elements in the map are invalid\n%s",RED, GRN);
 	else if (ft_strnstr(error_message, "invalid_line", len))
 		ft_printf("%sError\nThere is an empty line in the map\n%s",RED, GRN);
 	else if (ft_strnstr(error_message, "invalid_map", len))
 		ft_printf("%sError\nThe map is invalid\n%s",RED, GRN);
+	else if (ft_strnstr(error_message, "no_spawn", len))
+		ft_printf("%sError\nThe map has no spawner\n%s",RED, GRN);
+	else if (ft_strnstr(error_message, "multiple_spawn", len))
+		ft_printf("%sError\nThe map has multiples spawners\n%s",RED, GRN);
 	exit (1);
 }

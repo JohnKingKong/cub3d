@@ -6,7 +6,7 @@
 /*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 16:03:18 by anonymous         #+#    #+#             */
-/*   Updated: 2022/10/27 12:26:08 by anonymous        ###   ########.fr       */
+/*   Updated: 2022/10/27 12:34:20 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,10 +80,14 @@ bool	flood_fill(void)
 		j = 0;
 		while (infos->map[i][j])
 		{
-			if (infos->map[i][j] == '0')
+			if (infos->map[i][j] == '0' || infos->map[i][j] == 'N'
+				|| infos->map[i][j] == 'W' || infos->map[i][j] == 'E'
+				|| infos->map[i][j] == 'S')
 			{
-				if (!check_up(infos->map, i, j) || !check_down(infos->map, i, j)
-					|| !check_right(infos->map, i, j) || !check_left(infos->map, i, j))
+				if (!check_up(infos->map, i, j)
+					|| !check_down(infos->map, i, j)
+					|| !check_right(infos->map, i, j)
+					|| !check_left(infos->map, i, j))
 						error_exit("invalid_map");
 			}
 			j++;

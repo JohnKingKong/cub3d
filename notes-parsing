@@ -16,13 +16,24 @@ la desc des elements peut etre separes de plusieurs espaces (mais pas la map) do
 
 
 
-Map tjrs en dernier, le reste px etre random
+Map tjrs en dernier, le reste px etre random     done
+
+
+
+
+fermer par des murs (devrait se checker tu seul par le floodfill)    dooone
+
+
+
+
+px avoir des espaces dans la map (floodfill)    donnnneee
+
+
+
 
 doit etre compose de 0, 1, et N,S,W ou E pour le position de depart du perso
 
-fermer par des murs (devrait se checker tu seul par le floodfill)
 
-px avoir des espaces dans la map (floodfill)
 
 
 

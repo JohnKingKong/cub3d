@@ -6,7 +6,7 @@
 /*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 00:29:39 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/10/26 16:45:15 by anonymous        ###   ########.fr       */
+/*   Updated: 2022/10/27 12:35:45 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	init_infos(void)
 	t_map_infos	*infos;
 
 	infos = get_infos();
+	infos->spawner = false;
 	infos->one_time_on[0] = false;
 	infos->one_time_on[1] = false;
 	infos->one_time_on[2] = false;
