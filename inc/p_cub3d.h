@@ -6,7 +6,7 @@
 /*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 23:32:45 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/10/25 17:55:06 by anonymous        ###   ########.fr       */
+/*   Updated: 2022/10/26 18:09:50 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int		get_pixel(t_data *data, int x, int y);
 bool		start_parse(char *argv[], int argc);
 void		check_elements(char *file);
 void		is_map(char *line);
+bool		flood_fill(void);
 
 // Map infos singleton
 t_map_infos	*get_infos(void);

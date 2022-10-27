@@ -6,7 +6,7 @@
 #    By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/31 08:51:26 by aguay             #+#    #+#              #
-#    Updated: 2022/10/25 17:31:24 by anonymous        ###   ########.fr        #
+#    Updated: 2022/10/26 19:33:34 by anonymous        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,7 +72,7 @@ KEY_INTERACTION_FILES	= key_hook.c\
 MAIN_FILES				=	cub3d.c game_init.c
 OTHERS_FILES			=	usefull.c usefull2.c
 PARSING_FILES			=	error.c map_reader.c parsing_1.c parsing_elements.c\
-							parsing_map.c
+							parsing_map.c flood_fill.c
 RAYTRACING_FILES		=	ray_casting.c
 HEADER_FILES			=	libft.h
 

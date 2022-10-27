@@ -6,7 +6,7 @@
 /*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 13:07:44 by anonymous         #+#    #+#             */
-/*   Updated: 2022/10/26 13:08:55 by anonymous        ###   ########.fr       */
+/*   Updated: 2022/10/26 16:58:37 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,4 +112,6 @@ void	check_elements(char *file)
 	loop_gnl(infos->fd);
 	printf("no :%s\nso :%s\nwe :%s\nea :%s\n", infos->path[0],infos->path[1], infos->path[2], infos->path[3]);
 	printf("color1 R :%s G :%s B :%s\ncolor2 R :%s G :%s B :%s\n", infos->color[0][0], infos->color[0][1], infos->color[0][2], infos->color[1][0], infos->color[1][1], infos->color[1][2]);
+	for (int i = 0; infos->map[i]; i++)
+		printf("map %d = %s\n", i, infos->map[i]);
 }

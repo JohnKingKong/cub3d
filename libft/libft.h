@@ -6,7 +6,7 @@
 /*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 15:50:08 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/10/25 14:19:56 by anonymous        ###   ########.fr       */
+/*   Updated: 2022/10/26 20:00:15 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ int		ft_strncmp(const char *str1, const char *str2, size_t n);
 int		ft_strlen(char *str);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strdup(const char *s);
+char	*ft_strdup2(const char *s);
+char	**ft_cpy_dbl_arr(char **matrix);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_strjoin(char const *s1, char const *s2);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
@@ -69,6 +71,7 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_strrchr(const char *s, int c);
 void	ft_free_chartable(char **table);
 int		ft_chartable_linecount(char **table);
+size_t	len_dbl_array(char **matrix);
 
 // printf
 int		ft_printf(const char *fmt, ...);

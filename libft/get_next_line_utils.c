@@ -3,33 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 08:36:09 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/09/13 16:01:20 by jmorneau         ###   ########.fr       */
+/*   Updated: 2022/10/26 19:37:19 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
-{
-	char			*dst;
-	unsigned int	total;
-	unsigned int	i;
+// void	*ft_calloc2(size_t count, size_t size)
+// {
+// 	char			*dst;
+// 	unsigned int	total;
+// 	unsigned int	i;
 
-	total = count * size;
-	dst = malloc(total);
-	if (!(dst))
-		return (NULL);
-	i = 0;
-	while (total--)
-	{
-		dst[i] = 0;
-		i++;
-	}
-	return ((void *)dst);
-}
+// 	total = count * size;
+// 	dst = malloc(total);
+// 	if (!(dst))
+// 		return (NULL);
+// 	i = 0;
+// 	while (total--)
+// 	{
+// 		dst[i] = 0;
+// 		i++;
+// 	}
+// 	return ((void *)dst);
+// }
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
