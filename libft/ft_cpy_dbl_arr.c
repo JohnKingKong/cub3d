@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_cpy_dbl_arr.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
+/*   By: jvigneau <jvigneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 18:18:00 by anonymous         #+#    #+#             */
-/*   Updated: 2022/10/26 20:00:04 by anonymous        ###   ########.fr       */
+/*   Updated: 2022/10/31 14:16:35 by jvigneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ char	**ft_cpy_dbl_arr(char **matrix)
 	char	**retour;
 	size_t	len_array;
 	int		i;
-
 
 	i = 0;
 	len_array = len_dbl_array(matrix);

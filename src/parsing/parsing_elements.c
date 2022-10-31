@@ -3,47 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_elements.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
+/*   By: jvigneau <jvigneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 13:07:44 by anonymous         #+#    #+#             */
-/*   Updated: 2022/10/26 16:58:37 by anonymous        ###   ########.fr       */
+/*   Created: 2022/10/31 15:27:41 by jvigneau          #+#    #+#             */
+/*   Updated: 2022/10/31 15:53:11 by jvigneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/cub3d.h"
 
-static void set_color(int index, char *line)
+static bool	check_path_texture(char *path)
 {
-	t_map_infos	*infos;
-	int			i;
-	int			j;
+	char	*temp;
 
-	j = 0;
-	infos = get_infos();
-	infos->color[index - 4] = ft_calloc(4, sizeof(char *));
-	while (j <= 3)
+	temp = ft_strdup2(path);
+	if (access(temp, F_OK) < 0)
 	{
-		i = 0;
-		while (line[i] && line[i] != ',' && !ft_isspace(line[i]))
-			i++;
-		infos->color[index - 4][j] = ft_calloc(i + 1, sizeof(char));
-		ft_strlcpy(infos->color[index - 4][j], line, i + 1);
-		line += i + 1;
-		j++;
+		free(temp);
+		return (false);
 	}
-}
-
-static void set_path(char *line, int index)
-{
-	int			len;
-	t_map_infos	*infos;
-
-	len = 0;
-	infos = get_infos();
-	while (line[len] != '\n')
-		len++;
-	infos->path[index] = ft_calloc(len + 2, sizeof(char));
-	ft_strlcpy(infos->path[index], line, len + 1);
+	free(temp);
+	return (true);
 }
 
 static void	prep_line(char *line, int index)
@@ -52,14 +32,16 @@ static void	prep_line(char *line, int index)
 
 	infos = get_infos();
 	if (infos->one_time_on[index] == true)
-		error_exit("duplicate");
+		error_exit(DUPL);
 	infos->one_time_on[index] = true;
-	if (index >= 0 && index <=3)
-		line+=2;
+	if (index >= 0 && index <= 3)
+		line += 2;
 	else
 		line++;
 	while (*line && ft_isspace(*line))
 		line++;
+	if (index <= 3 && check_path_texture(line) == false)
+		error_exit(INV_TEXTURE);
 	if (index >= 0 && index <= 3)
 		set_path(line, index);
 	else
@@ -86,8 +68,8 @@ static void	is_element(char *line)
 
 static void	loop_gnl(int fd)
 {
-	char		*line;
-	int			i;
+	char	*line;
+	int		i;
 
 	line = get_next_line(fd);
 	while (line != NULL)
@@ -110,8 +92,4 @@ void	check_elements(char *file)
 	init_infos();
 	infos->fd = open (file, O_RDONLY);
 	loop_gnl(infos->fd);
-	printf("no :%s\nso :%s\nwe :%s\nea :%s\n", infos->path[0],infos->path[1], infos->path[2], infos->path[3]);
-	printf("color1 R :%s G :%s B :%s\ncolor2 R :%s G :%s B :%s\n", infos->color[0][0], infos->color[0][1], infos->color[0][2], infos->color[1][0], infos->color[1][1], infos->color[1][2]);
-	for (int i = 0; infos->map[i]; i++)
-		printf("map %d = %s\n", i, infos->map[i]);
 }

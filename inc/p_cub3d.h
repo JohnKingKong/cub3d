@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   p_cub3d.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
+/*   By: jvigneau <jvigneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 23:32:45 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/10/26 18:09:50 by anonymous        ###   ########.fr       */
+/*   Updated: 2022/10/31 16:04:23 by jvigneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,13 @@ float	normalize_angle(float angle);
 int		get_pixel(t_data *data, int x, int y);
 
 //Parsing Functions
-bool		start_parse(char *argv[], int argc);
+void		set_color(int index, char *line);
+void		set_path(char *line, int index);
 void		check_elements(char *file);
 void		is_map(char *line);
+void		free_parsing(void);
+bool		start_parse(char *argv[], int argc);
+bool		check_spawn(void);
 bool		flood_fill(void);
 
 // Map infos singleton

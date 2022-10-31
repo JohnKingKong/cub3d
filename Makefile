@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+         #
+#    By: jvigneau <jvigneau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/31 08:51:26 by aguay             #+#    #+#              #
-#    Updated: 2022/10/26 19:33:34 by anonymous        ###   ########.fr        #
+#    Updated: 2022/10/31 16:05:27 by jvigneau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ CC				= gcc
 
 CFLAGS			= -Wall -Wextra -Werror
 
-MINIFLAGS		= -lmlx -lXext -lX11 -lm
+MINIFLAGS		= -lmlx -framework OpenGL -framework AppKit
 
 LIBFT			= ./libft/libft.a
 
@@ -72,7 +72,8 @@ KEY_INTERACTION_FILES	= key_hook.c\
 MAIN_FILES				=	cub3d.c game_init.c
 OTHERS_FILES			=	usefull.c usefull2.c
 PARSING_FILES			=	error.c map_reader.c parsing_1.c parsing_elements.c\
-							parsing_map.c flood_fill.c
+							parsing_map.c parsing_map2.c parsing_elements2.c flood_fill.c \
+							free_parsing.c
 RAYTRACING_FILES		=	ray_casting.c
 HEADER_FILES			=	libft.h
 
