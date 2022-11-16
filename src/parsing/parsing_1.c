@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_1.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jvigneau <jvigneau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 12:33:17 by jvigneau          #+#    #+#             */
-/*   Updated: 2022/10/31 16:04:45 by jvigneau         ###   ########.fr       */
+/*   Updated: 2022/11/15 19:23:27 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,6 @@ bool	start_parse(char *argv[], int argc)
 	if (!check_file_exists(argv[1]))
 		error_exit(FAKE_FILE);
 	check_elements(argv[1]);
-	free_parsing();
+	// free_parsing();
 	return (true);
 }

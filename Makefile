@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jvigneau <jvigneau@student.42.fr>          +#+  +:+       +#+         #
+#    By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/31 08:51:26 by aguay             #+#    #+#              #
-#    Updated: 2022/10/31 16:05:27 by jvigneau         ###   ########.fr        #
+#    Updated: 2022/11/15 19:11:48 by jmorneau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ CC				= gcc
 
 CFLAGS			= -Wall -Wextra -Werror
 
-MINIFLAGS		= -lmlx -framework OpenGL -framework AppKit
+MINIFLAGS		= -Lmlx -lmlx -framework OpenGL -framework AppKit
 
 LIBFT			= ./libft/libft.a
 
@@ -122,6 +122,7 @@ $(OBJ_DIR)%.o: %.c $(KEY_INTERACTION_SRCS) $(MAIN_SRCS) $(OTHERS_SRCS) $(PARSING
 #				declaration in Makefile
 
 ## ----- TOOLS AND COLORS ----- ##
+
 RM				= @rm -rf
 NO_PRINT		= --no-print-directory
 RED 			= \033[31m
@@ -181,7 +182,7 @@ opti: CFLAGS += -O3
 opti: obj $(NAME)
 
 leak: obj $(NAME)
-	@valgrind ./$(NAME)
+	leaks --atExit -- ./$(NAME) map_utils/map_test1.cub
 
 setup: 
 	@rm -rf LICENSE images README.md

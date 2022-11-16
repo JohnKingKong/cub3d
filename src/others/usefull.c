@@ -6,7 +6,7 @@
 /*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 00:52:08 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/10/21 14:43:51 by jmorneau         ###   ########.fr       */
+/*   Updated: 2022/11/15 19:23:50 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,14 +46,22 @@ void draw_grid(t_mlx *game)
 {
 	int i;
 	int j;
+	t_map_infos *infos;
+
+	infos = get_infos();
 
 	i = 0;
-	while (i < game->map.nb_row)
+	
+	int x = ft_strlen(infos->map[0]);
+	int y = len_dbl_array(infos->map);
+	for (int i = 0; i < y; i++)
+	printf("%s\n", infos->map[i]);
+	while (i < y)
 	{
 		j = 0;
-		while (j < game->map.len)
+		while (j < x)
 		{
-			if (game->map.map[i][j] == '1')
+			if (infos->map[i][j] == '1')
 				draw_square(game, j * 64, i * 64, BLACK);
 			else
 				draw_square(game, j * 64, i * 64, WHITE);
