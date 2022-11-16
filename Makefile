@@ -6,7 +6,7 @@
 #    By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/31 08:51:26 by aguay             #+#    #+#              #
-#    Updated: 2022/11/15 19:02:36 by jmorneau         ###   ########.fr        #
+#    Updated: 2022/11/15 19:11:48 by jmorneau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ CC				= gcc
 
 CFLAGS			= -Wall -Wextra -Werror
 
-MINIFLAGS		= -lmlx -framework OpenGL -framework AppKit
+MINIFLAGS		= -Lmlx -lmlx -framework OpenGL -framework AppKit
 
 LIBFT			= ./libft/libft.a
 
