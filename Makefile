@@ -6,7 +6,7 @@
 #    By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/31 08:51:26 by aguay             #+#    #+#              #
-#    Updated: 2022/10/21 15:09:53 by jmorneau         ###   ########.fr        #
+#    Updated: 2022/10/21 15:23:19 by jmorneau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -120,6 +120,7 @@ $(OBJ_DIR)%.o: %.c $(KEY_INTERACTION_SRCS) $(MAIN_SRCS) $(OTHERS_SRCS) $(PARSING
 #				declaration in Makefile
 
 ## ----- TOOLS AND COLORS ----- ##
+
 RM				= @rm -rf
 NO_PRINT		= --no-print-directory
 RED 			= \033[31m
@@ -157,7 +158,7 @@ all: obj $(NAME)
 #		to compile anything necessary
 #	3) Call the compiler with his dependencies
 #		(.o files, library.a) with -o (output) name
-$(NAME): $(OBJ_DIR) $(OBJS) $(LIBFT)
+$(NAME): $(OBJ_DIR) $(OBJS)
 	$(LIBFT_DIR)
 	$(CC) $(OBJS) $(LIBFT) $(MINIFLAGS) -o $(NAME)
 
@@ -179,7 +180,7 @@ opti: CFLAGS += -O3
 opti: obj $(NAME)
 
 leak: obj $(NAME)
-	@valgrind ./$(NAME)
+	leaks --atExit -- ./$(NAME) map_utils/map_test1.cub
 
 setup: 
 	@rm -rf LICENSE images README.md
