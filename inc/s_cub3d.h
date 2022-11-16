@@ -3,15 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   s_cub3d.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 23:32:47 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/10/21 13:58:58 by jmorneau         ###   ########.fr       */
+/*   Updated: 2022/10/27 12:35:20 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef S_CUB3D_H
 # define S_CUB3D_H
+
+# include <stdbool.h>
 
 typedef struct	s_v
 {
@@ -80,6 +82,16 @@ typedef struct s_basic
 	void		*mlx;
 	void		*win;
 }	t_basic;
+
+typedef struct s_map_infos
+{
+	int		fd;
+	bool	spawner;
+	bool	one_time_on[6];
+	char	*path[4];
+	char	**map;
+	char	***color;
+}	t_map_infos;
 
 typedef struct s_mlx
 {

@@ -6,7 +6,7 @@
 #    By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/31 08:51:26 by aguay             #+#    #+#              #
-#    Updated: 2022/10/21 15:23:19 by jmorneau         ###   ########.fr        #
+#    Updated: 2022/11/15 19:02:36 by jmorneau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,10 +19,10 @@
 #	42 Quebec.
 
 ## -----  NAME OF THE PROGRAMM ----- ##
-NAME 			= Cub3d
+NAME 			= cub3d
 
 ## ----- COMPILER AND FLAGS ----- ##
-CC				= clang 
+CC				= gcc
 
 CFLAGS			= -Wall -Wextra -Werror
 
@@ -67,13 +67,15 @@ INCLUDE_DIR		= inc/
 
 ## ----- FILES ----- ##
 
-KEY_INTERACTION_FILES	= key_hook.c 		\
+KEY_INTERACTION_FILES	= key_hook.c\
 		
-MAIN_FILES				= cub3d.c game_init.c	
-OTHERS_FILES			= usefull.c usefull2.c		
-PARSING_FILES			= error.c map_reader.c							
-RAYTRACING_FILES		= ray_casting.c	
-HEADER_FILES			= libft.h
+MAIN_FILES				=	cub3d.c game_init.c
+OTHERS_FILES			=	usefull.c usefull2.c
+PARSING_FILES			=	error.c map_reader.c parsing_1.c parsing_elements.c\
+							parsing_map.c parsing_map2.c parsing_elements2.c flood_fill.c \
+							free_parsing.c
+RAYTRACING_FILES		=	ray_casting.c
+HEADER_FILES			=	libft.h
 
 ## ----- ADDPREFIX TO FILES ----- ##
 

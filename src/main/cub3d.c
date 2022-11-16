@@ -3,21 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 23:51:36 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/10/21 13:59:19 by jmorneau         ###   ########.fr       */
+/*   Updated: 2022/10/25 12:20:30 by anonymous        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../../inc/cub3d.h"
-
-
-// static int texture_init(t_mlx *game, const char **argv)
-// {
-
-	
-// }
 
 static int image_val_init(t_mlx *game)
 {
@@ -49,15 +42,14 @@ static int val_init(t_mlx *game,char **argv)
 	return (1);
 }
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
 	t_mlx game;
 
-	if (argc != 2)
-		return (print_error("Le nombre d'arguments est invalide"));
+	if (start_parse(argv, argc) == false)
+		error_exit("parse");
 	if (!val_init(&game, argv))
 		return (0);
-
 	game_init(&game);
 	return (0);
 }
