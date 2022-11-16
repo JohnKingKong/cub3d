@@ -6,7 +6,7 @@
 /*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 00:52:08 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/11/15 19:23:50 by jmorneau         ###   ########.fr       */
+/*   Updated: 2022/11/15 19:34:03 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,10 @@ void draw_grid(t_mlx *game)
 	t_map_infos *infos;
 
 	infos = get_infos();
+
+
+
+
 
 	i = 0;
 	
