@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   s_cub3d.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
+/*   By: jvigneau <jvigneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 23:32:47 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/10/27 12:35:20 by anonymous        ###   ########.fr       */
+/*   Updated: 2022/12/12 15:20:12 by jvigneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,9 @@ typedef struct s_map_infos
 	int		fd;
 	bool	spawner;
 	bool	one_time_on[6];
+	char	direction;
+	int		positionx;
+	int		positiony;
 	char	*path[4];
 	char	**map;
 	char	***color;

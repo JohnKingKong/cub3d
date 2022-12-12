@@ -6,7 +6,7 @@
 /*   By: jvigneau <jvigneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 14:18:13 by jvigneau          #+#    #+#             */
-/*   Updated: 2022/10/31 15:06:05 by jvigneau         ###   ########.fr       */
+/*   Updated: 2022/12/12 15:19:42 by jvigneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void	check_valid_map_input(char map_input)
 		error_exit(INV_INPUT);
 }
 
-static void	loop_map(char map)
+static void	loop_map(char map, int i, int j)
 {
 	t_map_infos	*infos;
 
@@ -29,7 +29,12 @@ static void	loop_map(char map)
 		|| map == 'W' || map == 'E')
 	{
 		if (infos->spawner == false)
+		{
+			infos->direction = map;
+			infos->positionx = i;
+			infos->positiony = j;
 			infos->spawner = true;
+		}
 		else
 			error_exit(MULT_SPAWN);
 	}
@@ -49,7 +54,7 @@ bool	check_spawn(void)
 		j = 0;
 		while (infos->map[i][j])
 		{
-			loop_map(infos->map[i][j]);
+			loop_map(infos->map[i][j], i, j);
 			j++;
 		}
 		i++;

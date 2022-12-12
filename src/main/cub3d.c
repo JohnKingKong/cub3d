@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jvigneau <jvigneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 23:51:36 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/11/15 19:10:25 by jmorneau         ###   ########.fr       */
+/*   Updated: 2022/12/12 15:35:18 by jvigneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,6 @@ int main(int argc, char *argv[])
 	if (!val_init(&game, argv))
 		return (0);
 	game_init(&game);
+	free_parsing();
 	return (0);
 }
