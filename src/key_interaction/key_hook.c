@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   key_hook.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jvigneau <jvigneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 00:43:10 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/12/12 15:34:08 by jmorneau         ###   ########.fr       */
+/*   Updated: 2022/12/16 15:05:43 by jvigneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../../inc/cub3d.h"
+#include "../../inc/cub3d.h"
 
 int	move_player(t_mlx *game)
 {

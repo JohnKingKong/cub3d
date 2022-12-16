@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   usefull.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jvigneau <jvigneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 00:52:08 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/12/12 15:25:39 by jmorneau         ###   ########.fr       */
+/*   Updated: 2022/12/16 15:08:07 by jvigneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../../inc/cub3d.h"
+#include "../../inc/cub3d.h"
 
-float convert_deg_rad(float deg)
+float	convert_deg_rad(float deg)
 {
 	return (deg * (PI / 180.0));
 }
 
-float convert_rad_deg(float rad)
+float	convert_rad_deg(float rad)
 {
 	return (rad * (180 / PI));
 }
@@ -25,14 +25,14 @@ float convert_rad_deg(float rad)
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 {
 	char	*dst;
-	
+
 	if (x >= WIDTH || y >= HEIGHT || x < 0 || y < 0 || color == INV)
 		return ;
 	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
-	*(unsigned int*)dst = color;
+	*(unsigned int *)dst = color;
 }
 
-float normalize_angle(float angle)
+float	normalize_angle(float angle)
 {
 	angle = remainder(angle, TWO_PI);
 	if (angle < 0)
@@ -40,11 +40,12 @@ float normalize_angle(float angle)
 	return (angle);
 }
 
-int get_pixel(t_data *data, int x, int y)
+int	get_pixel(t_data *data, int x, int y)
 {
+	char	*dst;
+
 	if (x >= data->img_width || x < 0 || y >= data->img_height || y < 0)
-		return 0;
-	char *dst;
+		return (0);
 	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
-	return *(unsigned int *)dst;
+	return (*(unsigned int *)dst);
 }

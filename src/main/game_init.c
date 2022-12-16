@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   game_init.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jvigneau <jvigneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 00:29:39 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/12/12 15:35:00 by jmorneau         ###   ########.fr       */
+/*   Updated: 2022/12/16 15:07:01 by jvigneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../../inc/cub3d.h"
+#include "../../inc/cub3d.h"
 
 void	game_init(t_mlx *game)
 {
@@ -20,7 +20,6 @@ void	game_init(t_mlx *game)
 	mlx_hook(game->basic.win, 17, 0, (void *)exit, 0);
 	mlx_loop(game->basic.mlx);
 }
-
 
 void	init_infos(void)
 {

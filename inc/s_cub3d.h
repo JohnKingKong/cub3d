@@ -6,7 +6,7 @@
 /*   By: jvigneau <jvigneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 23:32:47 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/12/16 14:37:14 by jvigneau         ###   ########.fr       */
+/*   Updated: 2022/12/16 15:12:58 by jvigneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <stdbool.h>
 
-typedef struct	s_v
+typedef struct s_v
 {
 	float		x;
 	float		y;
@@ -34,14 +34,13 @@ typedef struct s_ray
 	};
 }				t_ray;
 
-typedef struct	s_key_b
+typedef struct s_key_b
 {
 	int			d;
 	int			a;
 	int			s;
 	int			w;
 }				t_key_b;
-
 
 typedef struct s_dda
 {
@@ -50,7 +49,7 @@ typedef struct s_dda
 	t_v		m;
 }				t_dda;
 
-typedef struct	s_data
+typedef struct s_data
 {
 	void		*img;
 	char		*addr;
@@ -69,9 +68,7 @@ typedef struct s_three
 	float	ty_off;
 	float	step_x;
 	float	step_y;
-
 }				t_three;
-
 
 typedef struct s_texture
 {
@@ -81,7 +78,7 @@ typedef struct s_texture
 	t_data		east;
 }				t_texture;
 
-typedef struct	s_map
+typedef struct s_map
 {
 	int			len;
 	int			nb_row;

@@ -6,7 +6,7 @@
 /*   By: jvigneau <jvigneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 23:33:21 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/10/31 15:03:19 by jvigneau         ###   ########.fr       */
+/*   Updated: 2022/12/16 15:10:14 by jvigneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@
 // # include "mlx.h"
 
 // a remove 
-#include <stdio.h>
+# include <stdio.h>
 
 #endif

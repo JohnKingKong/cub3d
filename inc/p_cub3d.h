@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   p_cub3d.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jvigneau <jvigneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 23:32:45 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/12/12 15:40:56 by jmorneau         ###   ########.fr       */
+/*   Updated: 2022/12/16 15:11:22 by jvigneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 
 # include "s_cub3d.h"
 
-int		print_error(char *str);
-int		map_reader(char *file, t_mlx *game);
-void	ft_exit(t_mlx *game);
-void	game_init(t_mlx *game);
-void	draw_grid(t_mlx *game);
-float	convert_deg_rad(float deg);
-float	convert_rad_deg(float rad);
-void	my_mlx_pixel_put(t_data *data, int x, int y, int color);
-float	normalize_angle(float angle);
-int		get_pixel(t_data *data, int x, int y);
-t_ray	dda_v2(t_mlx *game, float angle);
+int			print_error(char *str);
+int			map_reader(char *file, t_mlx *game);
+void		ft_exit(t_mlx *game);
+void		game_init(t_mlx *game);
+void		draw_grid(t_mlx *game);
+float		convert_deg_rad(float deg);
+float		convert_rad_deg(float rad);
+void		my_mlx_pixel_put(t_data *data, int x, int y, int color);
+float		normalize_angle(float angle);
+int			get_pixel(t_data *data, int x, int y);
+t_ray		dda_v2(t_mlx *game, float angle);
 
 //Parsing Functions
 void		set_color(int index, char *line);
@@ -42,17 +42,15 @@ t_map_infos	*get_infos(void);
 void		init_infos(void);
 
 //Error Functions
-void	error_exit(char *error_message);
+void		rror_exit(char *error_message);
 
 //Key hook
-int	move_player(t_mlx *game);
-int		move(int keycode, t_mlx *game);
-int	check_key_is_on(int keycode, t_mlx *game);
+int			move_player(t_mlx *game);
+int			move(int keycode, t_mlx *game);
+int			check_key_is_on(int keycode, t_mlx *game);
 
 // render
-void	draw_fov(t_mlx *game);
-void	print_texture(t_mlx *game, t_three *three, int x);
-
-
+void		draw_fov(t_mlx *game);
+void		print_texture(t_mlx *game, t_three *three, int x);
 
 #endif

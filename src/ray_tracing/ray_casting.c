@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ray_casting.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jvigneau <jvigneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 01:05:51 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/12/12 15:32:50 by jmorneau         ###   ########.fr       */
+/*   Updated: 2022/12/16 15:08:23 by jvigneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../../inc/cub3d.h"
+#include "../../inc/cub3d.h"
 
 static int	check_walls(t_mlx *game, int x, int y)
 {

@@ -6,12 +6,11 @@
 /*   By: jvigneau <jvigneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 23:51:36 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/12/16 14:37:28 by jvigneau         ###   ########.fr       */
+/*   Updated: 2022/12/16 15:06:43 by jvigneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../../inc/cub3d.h"
-
+#include "../../inc/cub3d.h"
 
 static	int	var_texture_init(t_data *img,
 			char *img_name, char *path, t_mlx *game)
@@ -86,9 +85,9 @@ static int	val_init(t_mlx *game, char **argv)
 	return (1);
 }
 
-int main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
-	t_mlx game;
+	t_mlx	game;
 
 	if (start_parse(argv, argc) == false)
 		error_exit("parse");
