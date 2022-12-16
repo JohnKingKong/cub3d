@@ -6,7 +6,7 @@
 #    By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/31 08:51:26 by aguay             #+#    #+#              #
-#    Updated: 2022/11/15 19:11:48 by jmorneau         ###   ########.fr        #
+#    Updated: 2022/12/12 15:41:11 by jmorneau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,12 +70,13 @@ INCLUDE_DIR		= inc/
 KEY_INTERACTION_FILES	= key_hook.c\
 		
 MAIN_FILES				=	cub3d.c game_init.c
-OTHERS_FILES			=	usefull.c usefull2.c
+OTHERS_FILES			=	usefull.c
 PARSING_FILES			=	error.c map_reader.c parsing_1.c parsing_elements.c\
 							parsing_map.c parsing_map2.c parsing_elements2.c flood_fill.c \
 							free_parsing.c
 RAYTRACING_FILES		=	ray_casting.c
 HEADER_FILES			=	libft.h
+RENDER_FILES			=	texture.c three_d.c
 
 ## ----- ADDPREFIX TO FILES ----- ##
 

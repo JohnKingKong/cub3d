@@ -6,7 +6,7 @@
 /*   By: jvigneau <jvigneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 23:32:47 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/12/12 15:20:12 by jvigneau         ###   ########.fr       */
+/*   Updated: 2022/12/16 14:37:14 by jvigneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,18 @@ typedef struct	s_v
 	float		y;
 }				t_v;
 
-typedef struct	s_ray
+typedef struct s_ray
 {
-	t_v			side_delta;
 	float		dist;
+	float		ray_angle;
 	int			hit_down;
 	int			hit_left;
+	union
+	{
+		float	delta_x;
+		float	delta_y;
+	};
 }				t_ray;
-
 
 typedef struct	s_key_b
 {
@@ -39,35 +43,42 @@ typedef struct	s_key_b
 }				t_key_b;
 
 
-typedef struct	s_dda
+typedef struct s_dda
 {
-	t_v 	step_size;
-	t_v 	ray_lenght;
-	t_v 	step;
-	t_v 	ray_dir;
-
+	t_v		delta;
+	t_v		dist_step;
+	t_v		m;
 }				t_dda;
 
 typedef struct	s_data
 {
 	void		*img;
 	char		*addr;
-	float		img_width;
-	float		img_height;
 	int			bits_per_pixel;
 	int			line_length;
 	int			endian;
+	int			img_width;
+	int			img_height;
 }				t_data;
 
-typedef struct	s_texture
+typedef struct s_three
 {
-	t_data		nort;
+	float	line_h;
+	float	ty_step;
+	float	line_o;
+	float	ty_off;
+	float	step_x;
+	float	step_y;
+
+}				t_three;
+
+
+typedef struct s_texture
+{
+	t_data		north;
 	t_data		south;
 	t_data		west;
 	t_data		east;
-	t_data		door;
-	t_data		floor;
-	t_data		celling;
 }				t_texture;
 
 typedef struct	s_map
@@ -82,6 +93,14 @@ typedef struct s_basic
 	void		*mlx;
 	void		*win;
 }	t_basic;
+
+typedef struct s_player
+{
+	t_v			pos;
+	float		walk_speed;
+	float		rotation_speed;
+	float		player_angle;
+}				t_player;
 
 typedef struct s_map_infos
 {
@@ -103,6 +122,8 @@ typedef struct s_mlx
 	t_map		map;
 	t_texture	texture;
 	t_key_b		key_hook;
+	t_ray		*ray;
+	t_player	player;
 	int			frames;
 }	t_mlx;
 

@@ -3,23 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   game_init.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
+/*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 00:29:39 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/10/27 12:35:45 by anonymous        ###   ########.fr       */
+/*   Updated: 2022/12/12 15:35:00 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../../inc/cub3d.h"
 
-void game_init(t_mlx *game)
+void	game_init(t_mlx *game)
 {
-
-	draw_grid(game); // a enlever 
 	mlx_hook(game->basic.win, 2, 0, move, game);
+	mlx_loop_hook(game->basic.mlx, move_player, game);
+	mlx_hook(game->basic.win, 3, 0, check_key_is_on, game);
 	mlx_hook(game->basic.win, 17, 0, (void *)exit, 0);
-	mlx_loop(game->basic.mlx);	
+	mlx_loop(game->basic.mlx);
 }
+
 
 void	init_infos(void)
 {
