@@ -6,7 +6,7 @@
 /*   By: jvigneau <jvigneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 23:32:45 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/12/16 15:11:22 by jvigneau         ###   ########.fr       */
+/*   Updated: 2022/12/17 13:07:26 by jvigneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include "s_cub3d.h"
 
 int			print_error(char *str);
-int			map_reader(char *file, t_mlx *game);
+int			map_reader(t_mlx *game);
 void		ft_exit(t_mlx *game);
 void		game_init(t_mlx *game);
 void		draw_grid(t_mlx *game);
@@ -42,7 +42,7 @@ t_map_infos	*get_infos(void);
 void		init_infos(void);
 
 //Error Functions
-void		rror_exit(char *error_message);
+void		error_exit(char *error_message);
 
 //Key hook
 int			move_player(t_mlx *game);

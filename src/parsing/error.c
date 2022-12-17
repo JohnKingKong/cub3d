@@ -6,7 +6,7 @@
 /*   By: jvigneau <jvigneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 23:56:15 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/10/31 16:00:01 by jvigneau         ###   ########.fr       */
+/*   Updated: 2022/12/17 13:08:32 by jvigneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,9 @@ int	print_error(char *str)
 
 void	ft_exit(t_mlx *game)
 {
-	t_map_infos	*infos;
-
-	infos = get_infos();
 	mlx_destroy_image(game->basic.mlx, game->img.img);
 	ft_free_chartable(game->map.map);
+	free_parsing();
 	mlx_hook(game->basic.win, 17, 0, (void *)exit, 0);
 	exit (0);
 }

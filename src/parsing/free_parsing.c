@@ -6,7 +6,7 @@
 /*   By: jvigneau <jvigneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 16:00:21 by jvigneau          #+#    #+#             */
-/*   Updated: 2022/12/12 15:33:31 by jvigneau         ###   ########.fr       */
+/*   Updated: 2022/12/17 13:08:17 by jvigneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,19 @@ void	free_parsing(void)
 	int			i;
 
 	infos = get_infos();
-	ft_free_chartable(infos->map);
 	i = 0;
-	while (infos->color[i])
+	while (i < 3)
 	{
-		free(infos->color[i]);
+		free(infos->color[0][i]);
+		free(infos->color[1][i]);
 		i++;
 	}
+	free(infos->color[0]);
+	free(infos->color[1]);
 	free(infos->color);
-	i = 0;
-	while (infos->path[i])
-	{
-		free(infos->path[i]);
-		i++;
-	}
+	free(infos->path[0]);
+	free(infos->path[1]);
+	free(infos->path[2]);
+	free(infos->path[3]);
+
 }

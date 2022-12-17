@@ -6,7 +6,7 @@
 /*   By: jvigneau <jvigneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 23:51:36 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/12/16 15:06:43 by jvigneau         ###   ########.fr       */
+/*   Updated: 2022/12/17 13:07:55 by jvigneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,17 +68,20 @@ static int	image_val_init(t_mlx *game)
 	return (1);
 }
 
-static int	val_init(t_mlx *game, char **argv)
+static int	val_init(t_mlx *game)
 {
+	t_map_infos	*infos;
+
+	infos = get_infos();
 	ft_memset(game, 0, sizeof(t_mlx));
 	game->player.player_angle = QUART_PI;
-	game->player.pos.x = 500;
-	game->player.pos.y = 500;
+	game->player.pos.x = infos->positionx * 32;
+	game->player.pos.y = infos->positiony * 32;
 	game->player.rotation_speed = 0.0523599;
 	game->player.walk_speed = 3;
 	if (!image_val_init(game))
 		return (0);
-	if (!map_reader(argv[1], game))
+	if (!map_reader(game))
 		return (print_error("MAP ERROR"));
 	if (!texture_init(game))
 		return (0);
@@ -91,7 +94,7 @@ int	main(int argc, char *argv[])
 
 	if (start_parse(argv, argc) == false)
 		error_exit("parse");
-	if (!val_init(&game, argv))
+	if (!val_init(&game))
 		return (0);
 	game_init(&game);
 	free_parsing();
