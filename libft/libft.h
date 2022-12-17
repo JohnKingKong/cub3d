@@ -6,7 +6,7 @@
 /*   By: jvigneau <jvigneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 15:50:08 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/12/17 13:15:17 by jvigneau         ###   ########.fr       */
+/*   Updated: 2022/12/17 13:38:19 by jvigneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdio.h>
 # include <stdarg.h>
 # include <fcntl.h>
+# include "get_next_line.h"
 
 # define BUFFER_SIZE 1
 
@@ -81,8 +82,7 @@ int		ft_printf_ptr(unsigned long ptr);
 int		ft_print_unsigned(unsigned int n);
 int		ft_printf_hex(unsigned int num, const char format);
 int		ft_print_char(const char c);
-// gnl
-char	*get_next_line(int fd);
+
 
 
 #endif

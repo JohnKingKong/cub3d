@@ -3,85 +3,122 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+        */
+/*   By: jvigneau <jvigneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/26 08:36:09 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/10/26 19:37:19 by anonymous        ###   ########.fr       */
+/*   Created: 2021/12/14 13:53:16 by jvigneau          #+#    #+#             */
+/*   Updated: 2022/12/17 14:03:57 by jvigneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "get_next_line.h"
 
-// void	*ft_calloc2(size_t count, size_t size)
-// {
-// 	char			*dst;
-// 	unsigned int	total;
-// 	unsigned int	i;
-
-// 	total = count * size;
-// 	dst = malloc(total);
-// 	if (!(dst))
-// 		return (NULL);
-// 	i = 0;
-// 	while (total--)
-// 	{
-// 		dst[i] = 0;
-// 		i++;
-// 	}
-// 	return ((void *)dst);
-// }
-
-char	*ft_strjoin(char const *s1, char const *s2)
+int	the_one_that_reads(char **buffer, int fd)
 {
-	int		i;
-	int		j;
-	char	*str;
+	int		len_read;
+	char	*new_buffer;
 
-	i = 0;
-	j = 0;
-	str = malloc(sizeof(char) * (ft_strlen((char *)s1)
-				+ ft_strlen((char *)s2)) + 1);
+	while (!*buffer || !len_n_seek(*buffer, '\n'))
+	{
+		new_buffer = malloc(sizeof(char) * BUFFER_SIZE + 1);
+		if (!new_buffer)
+			return (0);
+		len_read = read(fd, new_buffer, BUFFER_SIZE);
+		if (len_read <= 0)
+			return (0);
+		new_buffer[len_read] = '\0';
+		*buffer = the_one_that_joins(*buffer, new_buffer);
+		free(new_buffer);
+	}
+	return (len_n_seek(*buffer, '\n'));
+}
+
+int	len_n_seek(char *str, char to_search)
+{
+	int	len;
+
+	len = 0;
 	if (!str)
+		return (0);
+	while (str[len] && str[len] != to_search)
+		len++;
+	if (!to_search)
+		return (len);
+	if (str[len] != to_search)
+		return (0);
+	else
+		return (len + 1);
+}
+
+char	*the_one_that_joins(char *buffer, char *line_read)
+{
+	char	*new_buffer;
+	int		len_tot;
+	int		cnt1_buffer;
+	int		cnt2_line;
+
+	cnt1_buffer = 0;
+	cnt2_line = 0;
+	len_tot = len_n_seek(buffer, 0) + len_n_seek(line_read, 0);
+	new_buffer = malloc(sizeof(char) * len_tot + 1);
+	if (!new_buffer)
 		return (NULL);
-	while (s1[i] != '\0')
+	while (buffer && buffer[cnt1_buffer])
 	{
-		str[i] = s1[i];
-		i++;
+		new_buffer[cnt1_buffer] = buffer[cnt1_buffer];
+		cnt1_buffer++;
 	}
-	while (s2[j] != '\0')
+	free(buffer);
+	while (line_read && line_read[cnt2_line])
 	{
-		str[i] = s2[j];
-		i++;
-		j++;
+		new_buffer[cnt1_buffer] = line_read[cnt2_line];
+		cnt1_buffer++;
+		cnt2_line++;
 	}
-	str[i] = '\0';
-	return (str);
+	new_buffer[cnt1_buffer] = '\0';
+	return (new_buffer);
 }
 
-char	*ft_strchr(const char *str, int c)
+void	the_one_that_copies(char **buffer, char **line, int len)
 {
-	while (1)
+	int		cnt;
+	char	*new_buffer;
+
+	cnt = 0;
+	while (cnt < len)
 	{
-		if (*str == c)
-			return ((char *)str);
-		if (*str == '\0')
-			return (0);
-		str++;
+		(*line)[cnt] = (*buffer)[cnt];
+		cnt++;
+	}
+	(*line)[cnt] = '\0';
+	if (!len_n_seek(*buffer, '\n'))
+	{
+		free(*buffer);
+		*buffer = NULL;
+	}
+	else
+	{
+		new_buffer = the_one_that_doops(&(*buffer)[len]);
+		free(*buffer);
+		*buffer = new_buffer;
 	}
 }
 
-int	ft_strchr_index(const char *str, int c)
+char	*the_one_that_doops(char *buffer)
 {
-	int	i;
+	int		cnt;
+	int		len;
+	char	*final_line;
 
-	i = 0;
-	while (1)
+	cnt = 0;
+	len = len_n_seek(buffer, 0);
+	final_line = malloc(sizeof(char) * len + 1);
+	if (!final_line)
+		return (NULL);
+	while (buffer[cnt])
 	{
-		if (*str == c)
-			return (i);
-		if (*str == '\0')
-			return (0);
-		str++;
-		i++;
+		final_line[cnt] = buffer[cnt];
+		cnt++;
 	}
+	final_line[cnt] = '\0';
+	return (final_line);
 }
