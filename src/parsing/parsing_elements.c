@@ -6,7 +6,7 @@
 /*   By: jvigneau <jvigneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 15:27:41 by jvigneau          #+#    #+#             */
-/*   Updated: 2022/12/17 14:22:10 by jvigneau         ###   ########.fr       */
+/*   Updated: 2022/12/18 14:33:32 by jvigneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,8 +80,10 @@ static void	loop_gnl(int fd)
 			i++;
 		if (line[i] == '1')
 			is_map(line);
+		free(line);
 		line = get_next_line(fd);
 	}
+	free(line);
 }
 
 void	check_elements(char *file)
@@ -92,4 +94,8 @@ void	check_elements(char *file)
 	init_infos();
 	infos->fd = open (file, O_RDONLY);
 	loop_gnl(infos->fd);
+	if (!check_spawn())
+		error_exit(NO_SPAWN);
+	if (flood_fill() == false)
+		error_exit(INV_MAP);
 }

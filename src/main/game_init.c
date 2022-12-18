@@ -6,7 +6,7 @@
 /*   By: jvigneau <jvigneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 00:29:39 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/12/16 15:07:01 by jvigneau         ###   ########.fr       */
+/*   Updated: 2022/12/18 14:32:01 by jvigneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	init_infos(void)
 	infos->one_time_on[4] = false;
 	infos->one_time_on[5] = false;
 	infos->color = calloc(3, sizeof(char **));
+	infos->map = ft_calloc(10000 + 1, sizeof(char *));
 }
 
 t_map_infos	*get_infos(void)

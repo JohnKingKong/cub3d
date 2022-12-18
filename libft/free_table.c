@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free_table.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jvigneau <jvigneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 13:29:07 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/10/21 15:02:14 by jmorneau         ###   ########.fr       */
+/*   Updated: 2022/12/18 14:37:53 by jvigneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ void	ft_free_chartable(char **table)
 		free(table[i]);
 		i++;
 	}
-	if (table)
+	free(table[i]);
 		free(table);
 }
