@@ -6,7 +6,7 @@
 /*   By: jvigneau <jvigneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 16:00:21 by jvigneau          #+#    #+#             */
-/*   Updated: 2022/12/17 14:08:07 by jvigneau         ###   ########.fr       */
+/*   Updated: 2022/12/17 14:24:50 by jvigneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,4 @@ void	free_parsing(void)
 	free(infos->path[1]);
 	free(infos->path[2]);
 	free(infos->path[3]);
-
 }
