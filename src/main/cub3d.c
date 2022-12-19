@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jvigneau <jvigneau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 23:51:36 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/12/19 15:24:27 by jvigneau         ###   ########.fr       */
+/*   Updated: 2022/12/19 16:21:20 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ static int	image_val_init(t_mlx *game)
 			&game->img.line_length, &game->img.endian);
 	if (!game->img.addr)
 		return (print_error("IMG BUFFER FAILED INIT"));
-	game->ray = calloc(sizeof(t_ray), NUM_RAY);
+	game->ray = ft_calloc(sizeof(t_ray), NUM_RAY);
 	if (!game->ray)
 		return (print_error("MALLOC FAILED"));
 	return (1);
