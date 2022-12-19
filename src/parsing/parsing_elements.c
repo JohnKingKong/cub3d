@@ -6,13 +6,13 @@
 /*   By: jvigneau <jvigneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 15:27:41 by jvigneau          #+#    #+#             */
-/*   Updated: 2022/12/19 14:52:14 by jvigneau         ###   ########.fr       */
+/*   Updated: 2022/12/19 15:25:38 by jvigneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/cub3d.h"
 
- bool	check_path_texture(char *path)
+static bool	check_path_texture(char *path)
 {
 	char	*temp;
 
@@ -26,7 +26,7 @@
 	return (true);
 }
 
- void	prep_line(char *line, int index)
+static void	prep_line(char *line, int index)
 {
 	t_map_infos	*infos;
 
@@ -48,7 +48,7 @@
 		set_color(index, line);
 }
 
-void	is_element(char *line)
+static void	is_element(char *line)
 {
 	while (*line && ft_isspace(*line))
 		line++;
@@ -66,7 +66,7 @@ void	is_element(char *line)
 		prep_line(line, 5);
 }
 
-void	loop_gnl(int fd)
+static void	loop_gnl(int fd)
 {
 	char	*line;
 	int		i;
