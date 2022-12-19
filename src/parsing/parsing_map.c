@@ -6,7 +6,7 @@
 /*   By: jvigneau <jvigneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 17:29:59 by anonymous         #+#    #+#             */
-/*   Updated: 2022/12/18 14:33:04 by jvigneau         ###   ########.fr       */
+/*   Updated: 2022/12/19 15:26:51 by jvigneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,15 +43,15 @@ static bool	is_valid_line(char *line)
 static void	copy_map(char *line)
 {
 	t_map_infos	*infos;
-	static int			i = 0;
+	static int	i = 0;
 
 	infos = get_infos();
-		if (!is_valid_line(line))
-		{
-				error_exit(INV_LINE);
-		}
-		infos->map[i] = ft_strdup2(line);
-		i++;
+	if (!is_valid_line(line))
+	{
+		error_exit(INV_LINE);
+	}
+	infos->map[i] = ft_strdup2(line);
+	i++;
 }
 
 void	is_map(char *line)
@@ -59,5 +59,4 @@ void	is_map(char *line)
 	if (all_elem_are_true() == false)
 		error_exit(ORDER);
 	copy_map(line);
-	
 }

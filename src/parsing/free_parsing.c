@@ -6,11 +6,29 @@
 /*   By: jvigneau <jvigneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 16:00:21 by jvigneau          #+#    #+#             */
-/*   Updated: 2022/12/19 14:47:07 by jvigneau         ###   ########.fr       */
+/*   Updated: 2022/12/19 15:31:23 by jvigneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/cub3d.h"
+
+void	continue_free(void)
+{
+	int			i;
+	t_map_infos	*infos;
+
+	infos = get_infos();
+	i = 0;
+	if (infos->path[0])
+		free(infos->path[0]);
+	if (infos->path[1])
+		free(infos->path[1]);
+	if (infos->path[2])
+		free(infos->path[2]);
+	if (infos->path[3])
+		free(infos->path[3]);
+	free(infos);
+}
 
 void	free_parsing(void)
 {
@@ -38,14 +56,5 @@ void	free_parsing(void)
 		}
 		free(infos->color);
 	}
-	i = 0;
-	if (infos->path[0])
-		free(infos->path[0]);
-	if (infos->path[1])
-		free(infos->path[1]);
-	if (infos->path[2])
-		free(infos->path[2]);
-	if (infos->path[3])
-		free(infos->path[3]);
-	free(infos);
+	continue_free();
 }

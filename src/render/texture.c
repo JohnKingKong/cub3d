@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   texture.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jvigneau <jvigneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 00:06:21 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/12/19 15:20:20 by jmorneau         ###   ########.fr       */
+/*   Updated: 2022/12/19 15:24:13 by jvigneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/cub3d.h"
 
-t_data *cardinal_points(t_ray *ray, t_mlx *game)
+t_data	*cardinal_points(t_ray *ray, t_mlx *game)
 {
 	if (ray->hit_down && ray->hit_left)
 		return (&game->texture.north);
@@ -20,21 +20,24 @@ t_data *cardinal_points(t_ray *ray, t_mlx *game)
 		return (&game->texture.west);
 	else if (!ray->hit_left && ray->hit_down)
 		return (&game->texture.east);
-	else if (!ray->hit_down && !ray->hit_left) 
+	else if (!ray->hit_down && !ray->hit_left)
 		return (&game->texture.south);
 	return (NULL);
 }
- 
 
 static void	draw_f_c(t_mlx *game, int x, int i)
 {
-	t_map_infos *info;
+	t_map_infos	*info;
 
 	info = get_infos();
 	while (i < HEIGHT)
 	{
-		my_mlx_pixel_put(&game->img, x, i, createRGB(ft_atoi(info->color[0][0]), ft_atoi(info->color[0][1]), ft_atoi(info->color[0][2])));
-		my_mlx_pixel_put(&game->img, x, HEIGHT - i, createRGB(ft_atoi(info->color[1][0]), ft_atoi(info->color[1][1]), ft_atoi(info->color[1][2])));
+		my_mlx_pixel_put(&game->img, x, i,
+			create_rgb(ft_atoi(info->color[0][0]),
+				ft_atoi(info->color[0][1]), ft_atoi(info->color[0][2])));
+		my_mlx_pixel_put(&game->img, x, HEIGHT - i,
+			create_rgb(ft_atoi(info->color[1][0]),
+				ft_atoi(info->color[1][1]), ft_atoi(info->color[1][2])));
 		i++;
 	}
 }
