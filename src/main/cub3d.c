@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jvigneau <jvigneau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 23:51:36 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/12/17 14:05:42 by jvigneau         ###   ########.fr       */
+/*   Updated: 2022/12/19 10:32:05 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/cub3d.h"
+# include "../../inc/cub3d.h"
 
 static	int	var_texture_init(t_data *img,
 			char *img_name, char *path, t_mlx *game)
