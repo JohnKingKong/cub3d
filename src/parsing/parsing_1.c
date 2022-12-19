@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_1.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jvigneau <jvigneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 12:33:17 by jvigneau          #+#    #+#             */
-/*   Updated: 2022/12/19 12:48:13 by jmorneau         ###   ########.fr       */
+/*   Updated: 2022/12/19 15:11:37 by jvigneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,18 +36,18 @@ static bool	check_file_exists(char *filename)
 	return (true);
 }
 
-static void	print_parse_infos(void)
+void	print_parse_infos(void)
 {
-	// t_map_infos	*infos;
+	t_map_infos	*infos;
 
-	// infos = get_infos();
-	// printf("infos :%s so :%s we :%s ea :%s\n",
-	// 	infos->path[0], infos->path[1], infos->path[2], infos->path[3]);
-	// printf("color1 :%s 2 :%s 3 :%s color2 1 :%s 2 :%s 3 :%s\n",
-	// 	infos->color[0][0], infos->color[0][1], infos->color[0][2],
-	// 	infos->color[1][0], infos->color[1][1], infos->color[1][2]);
-	// printf("direction = %c, position x = %d, postion y = %d\n",
-	// 	infos->direction, infos->positionx, infos->positiony);
+	infos = get_infos();
+	printf("infos :%s so :%s we :%s ea :%s\n",
+		infos->path[0], infos->path[1], infos->path[2], infos->path[3]);
+	printf("color1 :%s 2 :%s 3 :%s color2 1 :%s 2 :%s 3 :%s\n",
+		infos->color[0][0], infos->color[0][1], infos->color[0][2],
+		infos->color[1][0], infos->color[1][1], infos->color[1][2]);
+	printf("direction = %c, position x = %d, postion y = %d\n",
+		infos->direction, infos->positionx, infos->positiony);
 }
 
 bool	start_parse(char *argv[], int argc)
@@ -59,6 +59,5 @@ bool	start_parse(char *argv[], int argc)
 	if (!check_file_exists(argv[1]))
 		error_exit(FAKE_FILE);
 	check_elements(argv[1]);
-	print_parse_infos();
 	return (true);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jvigneau <jvigneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 23:56:15 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/12/19 13:53:48 by jmorneau         ###   ########.fr       */
+/*   Updated: 2022/12/19 15:06:19 by jvigneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ int	print_error(char *str)
 {
 	if (str)
 	{
-		ft_putendl_fd("Error", 2);
-		ft_putendl_fd(str, 2);
+		printf("%sError\n", RED);
+		printf("%s%s", str, GRN);
 	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: jvigneau <jvigneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 15:27:41 by jvigneau          #+#    #+#             */
-/*   Updated: 2022/12/18 14:33:32 by jvigneau         ###   ########.fr       */
+/*   Updated: 2022/12/19 14:52:14 by jvigneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@
 		set_color(index, line);
 }
 
- void	is_element(char *line)
+void	is_element(char *line)
 {
 	while (*line && ft_isspace(*line))
 		line++;
@@ -66,12 +66,14 @@
 		prep_line(line, 5);
 }
 
- void	loop_gnl(int fd)
+void	loop_gnl(int fd)
 {
 	char	*line;
 	int		i;
 
 	line = get_next_line(fd);
+	if (!line)
+		error_exit(EMPTY_FILE);
 	while (line != NULL)
 	{
 		i = 0;

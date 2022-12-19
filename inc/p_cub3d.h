@@ -6,7 +6,7 @@
 /*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 23:32:45 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/12/19 15:13:54 by jmorneau         ###   ########.fr       */
+/*   Updated: 2022/12/19 15:18:13 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void		free_parsing(void);
 bool		start_parse(char *argv[], int argc);
 bool		check_spawn(void);
 bool		flood_fill(void);
+void		print_parse_infos(void);
 
 // Map infos singleton
 t_map_infos	*get_infos(void);

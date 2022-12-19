@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jvigneau <jvigneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 14:42:40 by jvigneau          #+#    #+#             */
-/*   Updated: 2022/12/19 13:25:30 by jmorneau         ###   ########.fr       */
+/*   Updated: 2022/12/19 14:40:12 by jvigneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@
 # define NO_SPAWN "The map has no spawner\n"
 # define MULT_SPAWN "The map has multiples spawners\n"
 # define INV_TEXTURE "The path to one of the textures is invalid\n"
+# define EMPTY_FILE "The file is empty\n"
 
 #endif

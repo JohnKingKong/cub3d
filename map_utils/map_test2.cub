@@ -1,7 +1,7 @@
-                        NO ./assets/lala
-           SO ./assets/a
-WE     ./assets/a
-EA                      ./assets/a
+                        NO ./texture/text.xpm
+           SO ./texture/texst.xpm
+WE     ./texture/rrr.xpm
+EA                      ./texture/rrr.xpm
 
 
 
