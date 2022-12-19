@@ -6,7 +6,7 @@
 /*   By: jvigneau <jvigneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 14:18:13 by jvigneau          #+#    #+#             */
-/*   Updated: 2022/12/18 14:31:40 by jvigneau         ###   ########.fr       */
+/*   Updated: 2022/12/19 10:18:48 by jvigneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ static void	loop_map(char map, int i, int j)
 		if (infos->spawner == false)
 		{
 			infos->direction = map;
-			infos->positionx = i;
-			infos->positiony = j;
+			infos->positionx = j;
+			infos->positiony = i;
 			infos->spawner = true;
 		}
 		else

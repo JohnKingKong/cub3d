@@ -1,7 +1,7 @@
-NO ./assets/lala
-SO ./assets/a
-WE ./assets/a
-EA ./assets/a
+NO ./texture/rrr.xpm
+SO ./texture/rrr.xpm
+WE ./texture/rrr.xpm
+EA ./texture/rrr.xpm
 
 
 
@@ -17,8 +17,8 @@ C 225,30,0
 
 11111111111111
 10000000000001
-11000000000001
-11000S00011111
-11100001100001
+11001110000001
+11000S10011111
+11101111100001
 1  10000000001
 11111111111111

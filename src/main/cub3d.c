@@ -6,7 +6,7 @@
 /*   By: jvigneau <jvigneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 23:51:36 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/12/17 14:05:42 by jvigneau         ###   ########.fr       */
+/*   Updated: 2022/12/19 10:18:19 by jvigneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,17 +33,20 @@ static	int	var_texture_init(t_data *img,
 
 static int	texture_init(t_mlx *game)
 {
+	t_map_infos *infos;
+
+	infos = get_infos();
 	if (!var_texture_init(&game->texture.north,
-			"NORTH", "./texture/rrr.xpm", game))
+			"NORTH", infos->path[0], game))
 		return (0);
 	if (!var_texture_init(&game->texture.south,
-			"SOUTH", "./texture/rrr.xpm", game))
+			"SOUTH", infos->path[1], game))
 		return (0);
 	if (!var_texture_init(&game->texture.east,
-			"EAST", "./texture/rrr.xpm", game))
+			"EAST", infos->path[2], game))
 		return (0);
 	if (!var_texture_init(&game->texture.west,
-			"WEST", "./texture/rrr.xpm", game))
+			"WEST", infos->path[3], game))
 		return (0);
 	return (1);
 }
@@ -75,8 +78,8 @@ static int	val_init(t_mlx *game)
 	infos = get_infos();
 	ft_memset(game, 0, sizeof(t_mlx));
 	game->player.player_angle = QUART_PI;
-	game->player.pos.x = infos->positionx * 32;
-	game->player.pos.y = infos->positiony * 32;
+	game->player.pos.x = infos->positionx * 64;
+	game->player.pos.y = infos->positiony * 64;
 	game->player.rotation_speed = 0.0523599;
 	game->player.walk_speed = 3;
 	if (!image_val_init(game))
