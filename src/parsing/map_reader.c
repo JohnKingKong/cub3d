@@ -3,55 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   map_reader.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jvigneau <jvigneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 00:21:26 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/12/19 13:07:54 by jmorneau         ###   ########.fr       */
+/*   Updated: 2022/12/19 16:16:09 by jvigneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/cub3d.h"
-
-// static char	*check_newline(int fd)
-// {
-// 	int		map_found;
-// 	char	*str;
-
-// 	map_found = 0;
-// 	while (!map_found)
-// 	{
-// 		str = get_next_line(fd);
-// 		if (!str)
-// 			return (NULL);
-// 		if (!ft_strlen(str))
-// 			free(str);
-// 		else
-// 			map_found = 1;
-// 	}
-// 	return (str);
-// }
-
-// static int	line_count(char *file)
-// {
-// 	int		col;
-// 	char	*str;
-// 	int		fd;
-
-// 	fd = open(file, O_RDONLY);
-// 	col = 0;
-// 	while (1)
-// 	{
-// 		str = get_next_line(fd);
-// 		if (!str)
-// 		{
-// 			close (fd);
-// 			return (col);
-// 		}
-// 		if (*str != '\n')
-// 			col++;
-// 		free(str);
-// 	}
-// }
 
 int	map_reader(t_mlx *game)
 {
