@@ -6,12 +6,11 @@
 /*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 23:51:36 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/12/12 15:28:37 by jmorneau         ###   ########.fr       */
+/*   Updated: 2022/12/19 08:58:01 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../../inc/cub3d.h"
-
 
 static	int	var_texture_init(t_data *img,
 			char *img_name, char *path, t_mlx *game)
