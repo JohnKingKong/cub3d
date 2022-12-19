@@ -1,18 +1,10 @@
-                        NO ./texture/text.xpm
-           SO ./texture/texst.xpm
-WE     ./texture/rrr.xpm
-EA                      ./texture/rrr.xpm
+NO ./texture/text.xpm
+WE ./texture/qc.xpm
+SO ./texture/texst.xpm
+EA ./texture/rrr.xpm
 
-
-
-
-
-
-C 225,30,0
-F 255,255,255
-
-
-
+C 225,0,255
+F 255,255,0
 
         1111111111111111111111111
         10000011001100000000000011
