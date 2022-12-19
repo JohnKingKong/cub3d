@@ -1,5 +1,5 @@
-NO ./texture/rrr.xpm
-SO ./texture/rrr.xpm
+NO ./texture/text.xpm
+SO ./texture/texst.xpm
 WE ./texture/rrr.xpm
 EA ./texture/rrr.xpm
 
@@ -18,7 +18,7 @@ C 225,30,0
 11111111111111
 10000000000001
 11001110000001
-11000S10011111
+11000W10011111
 11101111100001
-1  10000000001
+10010000000001
 11111111111111

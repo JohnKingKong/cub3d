@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: anonymous <anonymous@student.42.fr>        +#+  +:+       +#+         #
+#    By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/31 15:53:17 by jmorneau          #+#    #+#              #
-#    Updated: 2022/10/26 19:20:04 by anonymous        ###   ########.fr        #
+#    Updated: 2022/12/19 13:38:05 by jmorneau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,8 +21,8 @@ SRCS			= ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.
 
 OBJS			= $(SRCS:.c=.o)
 
-CC				= gcc
 RM				= rm -f
+
 CFLAGS			= -Wall -Wextra -Werror -I. -g
 
 NAME			= libft.a

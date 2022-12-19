@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jvigneau <jvigneau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 23:51:36 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/12/19 10:35:37 by jvigneau         ###   ########.fr       */
+/*   Updated: 2022/12/19 13:44:47 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static	int	var_texture_init(t_data *img,
 	{
 		ft_putstr_fd("ERROR : ", 2);
 		ft_putstr_fd(img_name, 2);
-		ft_putendl_fd("XPM TEXTURE FAILED INIT", 2);
+		ft_putendl_fd(" XPM TEXTURE FAILED INIT", 2);
 		return (0);
 	}
 	img->addr = mlx_get_data_addr(img->img,
@@ -77,7 +77,7 @@ static int	val_init(t_mlx *game)
 
 	infos = get_infos();
 	ft_memset(game, 0, sizeof(t_mlx));
-	game->player.player_angle = QUART_PI;
+	game->player.player_angle = player_position(infos->direction);
 	game->player.pos.x = infos->positionx * 64;
 	game->player.pos.y = infos->positiony * 64;
 	game->player.rotation_speed = 0.0523599;
@@ -94,7 +94,7 @@ static int	val_init(t_mlx *game)
 int	main(int argc, char *argv[])
 {
 	t_mlx	game;
-
+	
 	if (start_parse(argv, argc) == false)
 		error_exit("parse");
 	if (!val_init(&game))

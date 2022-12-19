@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   usefull.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jvigneau <jvigneau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 00:52:08 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/12/16 15:08:07 by jvigneau         ###   ########.fr       */
+/*   Updated: 2022/12/19 11:22:29 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,17 @@ int	get_pixel(t_data *data, int x, int y)
 		return (0);
 	dst = data->addr + (y * data->line_length + x * (data->bits_per_pixel / 8));
 	return (*(unsigned int *)dst);
+}
+
+float player_position(char c)
+{
+	if (c == 'N')
+		return (QUART_PI);
+	if (c == 'S')
+		return (QUART3_PI);
+	if (c == 'W')
+		return (PI);
+	if (c == 'E')
+		return (TWO_PI);
+	return (0);
 }

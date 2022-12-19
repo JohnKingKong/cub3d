@@ -12,7 +12,7 @@
 
 #include "../inc/cub3d.h"
 
-static bool	check_path_texture(char *path)
+ bool	check_path_texture(char *path)
 {
 	char	*temp;
 
@@ -26,7 +26,7 @@ static bool	check_path_texture(char *path)
 	return (true);
 }
 
-static void	prep_line(char *line, int index)
+ void	prep_line(char *line, int index)
 {
 	t_map_infos	*infos;
 
@@ -48,7 +48,7 @@ static void	prep_line(char *line, int index)
 		set_color(index, line);
 }
 
-static void	is_element(char *line)
+ void	is_element(char *line)
 {
 	while (*line && ft_isspace(*line))
 		line++;
@@ -66,7 +66,7 @@ static void	is_element(char *line)
 		prep_line(line, 5);
 }
 
-static void	loop_gnl(int fd)
+ void	loop_gnl(int fd)
 {
 	char	*line;
 	int		i;

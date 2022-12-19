@@ -6,7 +6,7 @@
 #    By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/31 08:51:26 by aguay             #+#    #+#              #
-#    Updated: 2022/12/12 15:41:11 by jmorneau         ###   ########.fr        #
+#    Updated: 2022/12/19 13:37:51 by jmorneau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ NAME 			= cub3d
 ## ----- COMPILER AND FLAGS ----- ##
 CC				= gcc
 
-CFLAGS			= -Wall -Wextra -Werror
+CFLAGS			= -Wall -Werror -Wextra -g
 
 MINIFLAGS		= -Lmlx -lmlx -framework OpenGL -framework AppKit
 

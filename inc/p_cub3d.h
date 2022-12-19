@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   p_cub3d.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jvigneau <jvigneau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 23:32:45 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/12/17 13:07:26 by jvigneau         ###   ########.fr       */
+/*   Updated: 2022/12/19 13:25:20 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void		my_mlx_pixel_put(t_data *data, int x, int y, int color);
 float		normalize_angle(float angle);
 int			get_pixel(t_data *data, int x, int y);
 t_ray		dda_v2(t_mlx *game, float angle);
+float		player_position(char c);
 
 //Parsing Functions
 void		set_color(int index, char *line);

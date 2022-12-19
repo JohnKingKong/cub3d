@@ -6,11 +6,25 @@
 /*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 00:06:21 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/12/12 15:30:53 by jmorneau         ###   ########.fr       */
+/*   Updated: 2022/12/19 11:04:43 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/cub3d.h"
+
+t_data *cardinal_points(t_ray *ray, t_mlx *game)
+{
+	if (ray->hit_down && ray->hit_left)
+		return (&game->texture.north);
+	else if (ray->hit_left && !ray->hit_down)
+		return (&game->texture.west);
+	else if (!ray->hit_left && ray->hit_down)
+		return (&game->texture.east);
+	else if (!ray->hit_down && !ray->hit_left) 
+		return (&game->texture.south);
+	return (NULL);
+}
+ 
 
 static void	draw_f_c(t_mlx *game, int x, int i)
 {
@@ -51,7 +65,7 @@ void	print_texture(t_mlx *game, t_three *three, int x)
 {
 	t_data	*img;
 
-	img = &game->texture.north;
+	img = cardinal_points(&game->ray[x], game);
 	three->line_h = ((WIDTH_ASSET * HEIGHT) / game->ray[x].dist);
 	three->ty_step = img->img_height / three->line_h;
 	if (img->img_height > HEIGHT)
@@ -66,6 +80,6 @@ void	print_texture(t_mlx *game, t_three *three, int x)
 	step_x(&game->ray[x], three, img);
 	if ((game->ray[x].hit_down && game->ray[x].hit_left)
 		|| (game->ray[x].hit_left && !game->ray[x].hit_down))
-		three->step_x = img->img_height - three->step_x;
+		three->step_x = img->img_width - three->step_x;
 	print_wall_texture(img, x, game, three);
 }

@@ -46,18 +46,12 @@ static void	copy_map(char *line)
 	static int			i = 0;
 
 	infos = get_infos();
-	// while (line != NULL)
-	// {
-		printf("%s\n", line);
 		if (!is_valid_line(line))
 		{
 				error_exit(INV_LINE);
 		}
 		infos->map[i] = ft_strdup2(line);
-		printf("map %s\n", infos->map[i]);
-		// line = get_next_line(infos->fd);
 		i++;
-	// }
 }
 
 void	is_map(char *line)
