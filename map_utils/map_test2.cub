@@ -1,24 +1,7 @@
-<<<<<<< HEAD
 NO ./texture/text.xpm
 WE ./texture/qc.xpm
 SO ./texture/texst.xpm
 EA ./texture/rrr.xpm
-=======
-                        NO ./texture/text.xpm
-           SO ./texture/texst.xpm
-WE     ./texture/rrr.xpm
-
-
-
-
-
-
-
-C 225,30,0
-F 255,255,255
-
-EA                      ./texture/rrr.xpm
->>>>>>> 8c2351fdb88d78eb726043f6aa2f1a05d2adadf2
 
 C 225,0,255
 F 255,255,0
