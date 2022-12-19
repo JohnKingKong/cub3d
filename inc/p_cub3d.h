@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   p_cub3d.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jvigneau <jvigneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 23:32:45 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/12/19 13:25:20 by jmorneau         ###   ########.fr       */
+/*   Updated: 2022/12/19 15:11:46 by jvigneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void		free_parsing(void);
 bool		start_parse(char *argv[], int argc);
 bool		check_spawn(void);
 bool		flood_fill(void);
+void		print_parse_infos(void);
 
 // Map infos singleton
 t_map_infos	*get_infos(void);

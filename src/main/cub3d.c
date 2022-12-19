@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jvigneau <jvigneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 23:51:36 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/12/19 13:44:47 by jmorneau         ###   ########.fr       */
+/*   Updated: 2022/12/19 15:10:56 by jvigneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,18 @@
 static	int	var_texture_init(t_data *img,
 			char *img_name, char *path, t_mlx *game)
 {
+	char	*temp;
+	char	*temp2;
+
 	img->img = mlx_xpm_file_to_image(game->basic.mlx,
 			path, &img->img_width, &img->img_height);
 	if (!img->img)
 	{
-		ft_putstr_fd("ERROR : ", 2);
-		ft_putstr_fd(img_name, 2);
-		ft_putendl_fd(" XPM TEXTURE FAILED INIT", 2);
+		temp = ft_strdup2(img_name);
+		temp2 = ft_strjoin(temp, " XPM TEXTURE FAILED INIT\n");
+		print_error(temp2);
+		free(temp2);
+		free(temp);
 		return (0);
 	}
 	img->addr = mlx_get_data_addr(img->img,
@@ -33,7 +38,7 @@ static	int	var_texture_init(t_data *img,
 
 static int	texture_init(t_mlx *game)
 {
-	t_map_infos *infos;
+	t_map_infos	*infos;
 
 	infos = get_infos();
 	if (!var_texture_init(&game->texture.north,
@@ -78,8 +83,8 @@ static int	val_init(t_mlx *game)
 	infos = get_infos();
 	ft_memset(game, 0, sizeof(t_mlx));
 	game->player.player_angle = player_position(infos->direction);
-	game->player.pos.x = infos->positionx * 64;
-	game->player.pos.y = infos->positiony * 64;
+	game->player.pos.x = (infos->positionx * 64) + 32;
+	game->player.pos.y = (infos->positiony * 64) + 32;
 	game->player.rotation_speed = 0.0523599;
 	game->player.walk_speed = 3;
 	if (!image_val_init(game))
@@ -94,11 +99,11 @@ static int	val_init(t_mlx *game)
 int	main(int argc, char *argv[])
 {
 	t_mlx	game;
-	
+
 	if (start_parse(argv, argc) == false)
 		error_exit("parse");
 	if (!val_init(&game))
-		return (0);
+		ft_exit(&game);
 	game_init(&game);
 	free_parsing();
 	return (0);
