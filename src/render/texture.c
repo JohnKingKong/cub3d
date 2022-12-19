@@ -6,7 +6,7 @@
 /*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 00:06:21 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/12/19 11:04:43 by jmorneau         ###   ########.fr       */
+/*   Updated: 2022/12/19 15:16:31 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,12 @@ t_data *cardinal_points(t_ray *ray, t_mlx *game)
 
 static void	draw_f_c(t_mlx *game, int x, int i)
 {
+	t_map_infos *info;
+
+	info = get_infos();
 	while (i < HEIGHT)
 	{
-		my_mlx_pixel_put(&game->img, x, i, BLUE);
+		my_mlx_pixel_put(&game->img, x, i, createRGB(ft_atoi(info->color[0][0]), ft_atoi(info->color[0][1]), ft_atoi(info->color[0][2])));
 		my_mlx_pixel_put(&game->img, x, HEIGHT - i, YELLOW);
 		i++;
 	}

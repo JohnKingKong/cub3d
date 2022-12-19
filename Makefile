@@ -6,7 +6,7 @@
 #    By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/31 08:51:26 by aguay             #+#    #+#              #
-#    Updated: 2022/12/19 13:37:51 by jmorneau         ###   ########.fr        #
+#    Updated: 2022/12/19 14:38:18 by jmorneau         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,7 +70,7 @@ INCLUDE_DIR		= inc/
 KEY_INTERACTION_FILES	= key_hook.c\
 		
 MAIN_FILES				=	cub3d.c game_init.c
-OTHERS_FILES			=	usefull.c
+OTHERS_FILES			=	usefull.c usefull_2.c
 PARSING_FILES			=	error.c map_reader.c parsing_1.c parsing_elements.c\
 							parsing_map.c parsing_map2.c parsing_elements2.c flood_fill.c \
 							free_parsing.c

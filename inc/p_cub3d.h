@@ -6,7 +6,7 @@
 /*   By: jmorneau <jmorneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 23:32:45 by jmorneau          #+#    #+#             */
-/*   Updated: 2022/12/19 13:25:20 by jmorneau         ###   ########.fr       */
+/*   Updated: 2022/12/19 15:13:54 by jmorneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,8 @@ int			move(int keycode, t_mlx *game);
 int			check_key_is_on(int keycode, t_mlx *game);
 
 // render
-void		draw_fov(t_mlx *game);
-void		print_texture(t_mlx *game, t_three *three, int x);
+void			draw_fov(t_mlx *game);
+void			print_texture(t_mlx *game, t_three *three, int x);
+unsigned long	createRGB(int r, int g, int b);
 
 #endif
