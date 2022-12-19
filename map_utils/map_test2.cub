@@ -3,6 +3,15 @@ WE ./texture/qc.xpm
 SO ./texture/texst.xpm
 EA ./texture/rrr.xpm
 
+<<<<<<< HEAD
+=======
+
+
+
+
+
+
+>>>>>>> 0af8722fa2250d591986f91a4543a03773a8d06a
 C 225,0,255
 F 255,255,0
 
